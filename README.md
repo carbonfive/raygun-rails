@@ -19,7 +19,7 @@ To run the specs or fire up the server, be sure you have these:
 After cloning, run these commands to install missing gems and prepare the database.
 
     $ gem install bundler
-    $ bundle update
+    $ bundle
     $ rake db:setup db:sample_data
 
 Note, ```rake db:sample_data``` loads a small set of data for development. Check out [db/sample_data.rb](db/sample_data.rb)
