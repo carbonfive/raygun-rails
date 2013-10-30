@@ -8,9 +8,11 @@ deployment:
   acceptance:
     branch: master
     commands:
-      - ./bin/deploy.sh app-prototype-acceptance
+      - ./bin/deploy.sh app-prototype-acceptance:
+          timeout: 360
 
   production:
     branch: production 
     commands:
-      - ./bin/deploy.sh app-prototype
+      - ./bin/deploy.sh app-prototype:
+          timeout: 360
