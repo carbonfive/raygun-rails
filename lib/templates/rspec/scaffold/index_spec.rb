@@ -3,7 +3,7 @@ require 'spec_helper'
 <% output_attributes = attributes.reject{|attribute| [:datetime, :timestamp, :time, :date].index(attribute.type) } -%>
 describe "<%= ns_table_name %>/index" do
   before(:each) do
-    assign(:<%= table_name %>, [
+    assign(:<%= table_name %>, Kaminari.paginate_array([
 <% [1,2].each_with_index do |id, model_index| -%>
       build_stubbed(:<%= class_name.underscore %><%= output_attributes.empty? ? (model_index == 1 ? ')' : '),') : ',' %>
 <% output_attributes.each_with_index do |attribute, attribute_index| -%>
@@ -13,7 +13,7 @@ describe "<%= ns_table_name %>/index" do
       <%= model_index == 1 ? ')' : '),' %>
 <% end -%>
 <% end -%>
-    ])
+    ]).page(1))
   end
 
   it "renders a list of <%= ns_table_name %>" do

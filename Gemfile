@@ -16,6 +16,7 @@ gem 'coffee-rails'
 gem 'turbolinks'
 gem 'simple_form', '~> 3.0'
 gem 'uglifier'
+gem 'kaminari'
 
 gem 'awesome_print'
 
