@@ -29,6 +29,6 @@ table.table.table-striped
                   method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-xs btn-danger'
                   
 = paginate @<%= plural_name %>
-
+br
 /- if can? :create, <%= singular_table_name.classify %>
 = link_to text_with_icon('New <%= human_name %>', 'plus'), new_<%= singular_table_name %>_path, class: 'btn btn-primary'
