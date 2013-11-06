@@ -2,7 +2,7 @@
 
 ...
 
-Generated with [Raygun](https://github.com/carbonfive/raygun).
+Generated with [Raygun](https://github.com/carbonfive/raygun)...
 
 # Requirements
 
