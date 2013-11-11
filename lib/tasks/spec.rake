@@ -5,7 +5,7 @@ begin
   namespace :spec do
     desc "Run the code examples in spec/ except those in spec/features"
     RSpec::Core::RakeTask.new('without_features' => 'db:test:prepare') do |t|
-      file_list = FileList['spec/**/*_spec.rb'].exclude("spec/features/**/*_spec.rb")
+      file_list = FileList['spec/**/*_spec.rb'].exclude('spec/features/**/*_spec.rb')
 
       t.pattern = file_list
     end
