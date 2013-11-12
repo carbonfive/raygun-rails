@@ -29,8 +29,21 @@ describe <%= controller_class_name %>Controller do
       get :index, {}, valid_session
       expect(assigns(:<%= table_name %>)).to eq([<%= file_name %>])
     end
+    describe "pagination" do
+      let(:parameters) {{}}
+      it 'paginates for HTML' do
+        <%= class_name %>.stub(:page)
+        <%= class_name %>.should_receive(:page).and_call_original
+        get :index, {}.merge(parameters), valid_session
+      end
+      # Uncomment test below if using JSON
+      # it 'does not paginate JSON' do
+      #   <%= class_name %>.stub(:page)
+      #   <%= class_name %>.should_not_receive(:page)
+      #   get :index, { format: :json }.merge(parameters), valid_session
+      # end
+    end
   end
-
 <% end -%>
   describe "#show" do
     it "assigns the requested <%= ns_file_name %> as @<%= ns_file_name %>" do
