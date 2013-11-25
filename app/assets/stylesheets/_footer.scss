@@ -1,18 +1,17 @@
 $footer-height: 30px;
 
 html, body {
+  /* The html and body elements cannot have any padding or margin. */
   height: 100%;
 }
 
 .wrapper {
   min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -($footer-height + 1);
-}
-
-.push {
-  height: $footer-height + 20px; // The extra prevents content from bumping right into our footer.
+  height: auto;
+  //margin: 0 auto -($footer-height + 1px) 0; // https://github.com/nex3/sass/issues/1023
+  margin: 0 auto 0;
+  margin-bottom: -($footer-height + 1);     // +1 to account for the 1px border in the footer.
+  padding-bottom: $footer-height + 10px;    // The extra prevents content from bumping right into our footer.
 }
 
 footer {
