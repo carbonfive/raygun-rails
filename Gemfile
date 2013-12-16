@@ -24,7 +24,7 @@ gem 'therubyracer', platforms: :ruby
 #gem 'libv8'#, '~> 3.11.8'
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.0.beta1'
   gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
