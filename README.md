@@ -8,7 +8,7 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 
 To run the specs or fire up the server, be sure you have these:
 
-* Ruby 2.1.0
+* Ruby 2.1 (see [.ruby-version](.ruby-version))
 * PostgreSQL 9.x with superuser 'postgres' with no password (```createuser -s postgres```)
 * PhantomJS for JavaScript testing (```brew install phantomjs```)
 
@@ -27,7 +27,7 @@ for details.
 
 ### Running the Specs
 
-To run all ruby and jasmine specs.
+To run all ruby and javascript specs.
 
     $ rake
 
@@ -59,9 +59,9 @@ Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mai
 This project is configured for continuous integration and deployment with CircleCI and Heroku. Follow
 these steps for first time configuration:
 
-1. Push the project to Github, if you haven't already.
-1. Authenticate at circleci.com and follow this project.
-1. Be sure to enable Heroku deploys from the project settings on CircleCI.
+1. Push the project to GitHub, if you haven't already.
+1. Authenticate at [circleci.com](CircleCI) and follow this project.
+1. Be sure to enable Heroku deploys from the project settings on [circleci.com](CircleCI).
 1. The project should automatically be deployed on every successful build.
 
 Check out [circle.yml](circle.yml) and [bin/deploy.sh](bin/deploy.sh) for details.
