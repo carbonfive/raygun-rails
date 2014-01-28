@@ -78,6 +78,7 @@ Install the Heroku toolbelt if you don't already have it (https://toolbelt.herok
 
 Several common features and operational parameters can be set using environment variables. These are all optional.
 
+* ```SECRET_TOKEN``` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
 * ```HOSTNAME``` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
 * ```BASIC_AUTH_PASSWORD``` - Enable basic auth with this password.
 * ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).

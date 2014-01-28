@@ -9,4 +9,7 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
+
+# Default key is useful for test and development, but should
+# absolutely be overriden in production.
 AppPrototype::Application.config.secret_key_base = ENV['SECRET_TOKEN'] || 'AWAbYFxfy5SxropZl5yIiNiE2bv3lJ7nLcreGI9p'
