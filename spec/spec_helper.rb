@@ -41,18 +41,15 @@ Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # See database_cleaner.rb for details.
+  # See database_cleaner.rb for database cleanup details.
   config.use_transactional_fixtures = false
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
-  config.infer_base_class_for_anonymous_controllers = false
+  config.infer_base_class_for_anonymous_controllers = true
 
-  # Use the new expect() syntax.
+  # Require the new expect() syntax.
   # - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
   # - http://teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   config.expect_with :rspec do |c|
