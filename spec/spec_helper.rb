@@ -34,15 +34,6 @@ require 'rspec/autorun'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-
-require 'capybara/poltergeist'
-
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: true, inspector: true)
-end
-
-Capybara.default_driver    = :rack_test
-Capybara.javascript_driver = :poltergeist
 Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations before tests are run.
