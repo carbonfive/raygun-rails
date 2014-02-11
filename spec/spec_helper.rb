@@ -41,6 +41,11 @@ Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+  # Require the new expect() syntax.
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
   # See database_cleaner.rb for database cleanup details.
   config.use_transactional_fixtures = false
 
@@ -49,18 +54,17 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = true
 
-  # Require the new expect() syntax.
-  # - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
-  # - http://teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
-
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = 'random'
+  #config.order = 'random'
+
+  # Run non-feature specs (shuffled) before feature specs.
+  config.register_ordering(:global) do |items|
+    features, others = items.partition { |g| g.metadata[:type] == :feature }
+    others.shuffle + features
+  end
 end
 
 # Turn down the logging while testing.
