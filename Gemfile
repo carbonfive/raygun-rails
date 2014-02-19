@@ -5,7 +5,7 @@ ruby '2.1.0'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.1.0.beta1'
+gem 'rails', '~> 4.1.0.rc1'
 gem 'pg'
 
 gem 'slim-rails'
@@ -24,8 +24,8 @@ gem 'therubyracer', platforms: :ruby
 #gem 'libv8'#, '~> 3.11.8'
 
 group :test, :development do
-  gem 'rspec-rails', '~> 3.0.0.beta1'
-  gem 'capybara'
+  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'capybara', github: 'jnicklas/capybara' # Rspec 3 deprecations, waiting for the next gem release.
   #gem 'capybara-email'
   gem 'poltergeist'
   gem 'factory_girl_rails'
