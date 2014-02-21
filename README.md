@@ -66,13 +66,15 @@ these steps for first time configuration:
 
 Check out [circle.yml](circle.yml) and [bin/deploy.sh](bin/deploy.sh) for details.
 
-### Manual Deploy to Heroku
+### Deploy Manually to Heroku
 
 Install the Heroku toolbelt if you don't already have it (https://toolbelt.heroku.com/).
 
     $ heroku apps:create app-prototype
     $ git push heroku master
-    $ heroku run rake db:setup
+    $ heroku run rake db:migrate db:seed
+
+Continuous deployment from the build server is highly recommended.
 
 ### Environment Variables
 
