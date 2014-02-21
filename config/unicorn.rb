@@ -4,7 +4,7 @@
 
 listen           ENV['PORT'], backlog: Integer(ENV['UNICORN_BACKLOG'] || 16)
 worker_processes Integer(ENV['UNICORN_WORKERS'] || 3)
-timeout          30
+timeout          15
 preload_app      true
 
 before_fork do |server, worker|
