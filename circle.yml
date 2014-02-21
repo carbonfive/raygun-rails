@@ -6,13 +6,13 @@ test:
 
 deployment:
   acceptance:
-    branch: master
+    branch: development
     commands:
       - ./bin/deploy.sh app-prototype-acceptance:
           timeout: 360
 
   production:
-    branch: production 
+    branch: master 
     commands:
       - ./bin/deploy.sh app-prototype:
           timeout: 360
