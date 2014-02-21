@@ -23,6 +23,10 @@ gem 'awesome_print'
 gem 'therubyracer', platforms: :ruby
 #gem 'libv8'#, '~> 3.11.8'
 
+group :production do
+  gem 'rails_stdout_logging'
+end
+
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.0.beta2'
   gem 'capybara', github: 'jnicklas/capybara' # Rspec 3 deprecations, waiting for the next gem release.
