@@ -48,6 +48,7 @@ group :development do
   gem 'launchy'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
   gem 'guard', '~> 2'
   gem 'guard-rspec'
   gem 'guard-jasmine'
