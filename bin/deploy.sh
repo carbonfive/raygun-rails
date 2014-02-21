@@ -20,28 +20,16 @@ if [ $REMOTE_MISSING -eq 0 ] ; then
   git remote add heroku git@heroku.com:$APP_NAME.git
 fi
 
-git fetch heroku
-
 PREV_WORKERS=$(heroku ps --app $APP_NAME | grep "^worker." | wc -l | xargs)
 
-PENDING_MIGRATIONS=$(git diff HEAD heroku/master --name-only -- db | wc -l | xargs)
+heroku maintenance:on --app $APP_NAME
 
-echo "There are $PENDING_MIGRATIONS pending migrations."
+heroku scale worker=0 --app $APP_NAME
 
-# Migrations require downtime so enter maintenance mode
-if [ $PENDING_MIGRATIONS -gt 0 ]; then
-  heroku maintenance:on --app $APP_NAME
-
-  # Make sure workers are not running during a migration
-  heroku scale worker=0 --app $APP_NAME
-fi
-
-# Deploy code changes (and implicitly restart the app and any running workers)
 git push -f heroku $SHA_TO_DEPLOY:refs/heads/master
 
-# Run database migrations if needed and restart background workers once finished
-if [ $PENDING_MIGRATIONS -gt 0 ]; then
-  heroku run rake db:migrate db:seed --app $APP_NAME
-  heroku scale worker=$PREV_WORKERS --app $APP_NAME
-  heroku maintenance:off --app $APP_NAME
-fi
+heroku run rake db:migrate db:seed --app $APP_NAME
+
+heroku scale worker=$PREV_WORKERS --app $APP_NAME
+
+heroku maintenance:off --app $APP_NAME
