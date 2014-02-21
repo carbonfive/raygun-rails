@@ -13,3 +13,11 @@ test:
   <<: *default
   database: app_prototype_test
   min_messages: warning
+
+acceptance:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
