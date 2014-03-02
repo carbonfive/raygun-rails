@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/jnicklas/capybara.git
-  revision: 77320df5b5d8b64581afe07b5033d2aa6a66d22c
+  revision: 595cd4a89bc5c7873e74a3b05761d27c30cc198a
   specs:
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -47,7 +47,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.5)
     arel (5.0.0)
-    atomic (1.1.14)
+    atomic (1.1.15)
     awesome_print (1.2.0)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -77,7 +77,7 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     docile (1.1.3)
-    dotenv (0.9.0)
+    dotenv (0.10.0)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
@@ -86,7 +86,7 @@ GEM
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.4.0)
+    factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
@@ -94,13 +94,13 @@ GEM
       dotenv (>= 0.7)
       thor (>= 0.13.6)
     formatador (0.2.4)
-    fuubar (1.3.2)
-      rspec (>= 2.14.0, < 3.1.0)
+    fuubar (2.0.0.beta1)
+      rspec (~> 3.0.beta)
       ruby-progressbar (~> 1.3)
     growl (1.0.3)
-    guard (2.4.0)
+    guard (2.5.1)
       formatador (>= 0.2.4)
-      listen (~> 2.1)
+      listen (~> 2.6)
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
@@ -114,9 +114,9 @@ GEM
       em-websocket (~> 0.5)
       guard (~> 2.0)
       multi_json (~> 1.8)
-    guard-rspec (4.2.2)
-      guard (~> 2.1, >= 2.1)
-      rspec (~> 3.0.0.beta, >= 2.14, < 4.0)
+    guard-rspec (4.2.7)
+      guard (~> 2.1)
+      rspec (>= 2.14, < 4.0)
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.9)
@@ -128,7 +128,7 @@ GEM
     launchy (2.4.2)
       addressable (~> 2.3)
     libv8 (3.16.14.3)
-    listen (2.5.0)
+    listen (2.6.2)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
       rb-fsevent (>= 0.9.3)
@@ -140,7 +140,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
-    minitest (5.2.3)
+    minitest (5.3.0)
     multi_json (1.8.4)
     nio4r (1.0.0)
     nokogiri (1.6.1)
@@ -210,7 +210,7 @@ GEM
       rspec-mocks (= 3.0.0.beta2)
       rspec-support (= 3.0.0.beta2)
     rspec-support (3.0.0.beta2)
-    ruby-progressbar (1.4.1)
+    ruby-progressbar (1.4.2)
     sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -247,8 +247,8 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
-    thread_safe (0.1.3)
-      atomic
+    thread_safe (0.2.0)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     timers (1.1.0)
     treetop (1.4.15)
@@ -282,7 +282,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   foreman
-  fuubar
+  fuubar (~> 2.0.0.beta1)
   growl
   guard (~> 2)
   guard-jasmine

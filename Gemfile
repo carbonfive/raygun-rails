@@ -34,7 +34,7 @@ group :test, :development do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'fuubar'
+  gem 'fuubar', '~> 2.0.0.beta1'
   gem 'jasminerice', github: 'bradphelan/jasminerice' # Latest release still depends on haml.
   #gem 'timecop'
   gem 'simplecov'
