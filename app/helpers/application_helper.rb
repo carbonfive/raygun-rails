@@ -38,7 +38,7 @@ module ApplicationHelper
     alert_type = {
       alert: 'danger',
       notice: 'info'
-    }.fetch(alert_type, alert_type.to_s)
+    }.with_indifferent_access.fetch(alert_type, alert_type.to_s)
     "alert-#{alert_type}"
   end
 
