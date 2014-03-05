@@ -27,6 +27,10 @@ group :production do
   gem 'rails_stdout_logging'
 end
 
+group :test do
+  gem 'fuubar', '~> 2.0.0.beta1'
+end
+
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.0.beta2'
   gem 'capybara', github: 'jnicklas/capybara' # Rspec 3 deprecations, waiting for the next gem release.
@@ -34,10 +38,9 @@ group :test, :development do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'fuubar', '~> 2.0.0.beta1'
   gem 'jasminerice', github: 'bradphelan/jasminerice' # Latest release still depends on haml.
   #gem 'timecop'
-  gem 'simplecov'
+  gem 'simplecov', '0.7.1'
   #gem 'cane'
   #gem 'morecane'
   #gem 'quiet_assets'
