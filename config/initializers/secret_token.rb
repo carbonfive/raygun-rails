@@ -12,4 +12,4 @@
 
 # Default key is useful for test and development, but should
 # absolutely be overriden in production.
-AppPrototype::Application.config.secret_key_base = ENV['SECRET_TOKEN'] || 'AWAbYFxfy5SxropZl5yIiNiE2bv3lJ7nLcreGI9p'
+AppPrototype::Application.config.secret_key_base = ENV['SECRET_KEY_BASE'] || 'AWAbYFxfy5SxropZl5yIiNiE2bv3lJ7nLcreGI9p'

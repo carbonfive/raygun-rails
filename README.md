@@ -80,7 +80,7 @@ Continuous deployment from the build server is highly recommended.
 
 Several common features and operational parameters can be set using environment variables. These are all optional.
 
-* ```SECRET_TOKEN``` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
+* ```SECRET_KEY_BASE``` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
 * ```HOSTNAME``` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
 * ```BASIC_AUTH_PASSWORD``` - Enable basic auth with this password.
 * ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).
