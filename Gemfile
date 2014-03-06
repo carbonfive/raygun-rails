@@ -19,10 +19,6 @@ gem 'uglifier'
 
 gem 'awesome_print'
 
-# Heroku suggests that these gems aren't necessary, but they're required to compile less assets on deploy.
-gem 'therubyracer', platforms: :ruby
-#gem 'libv8'#, '~> 3.11.8'
-
 group :production do
   gem 'rails_stdout_logging'
 end
