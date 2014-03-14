@@ -67,4 +67,4 @@ RSpec.configure do |config|
 end
 
 # Turn down the logging while testing.
-Rails.logger.level = 4
+#Rails.logger.level = 4
