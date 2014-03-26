@@ -5,11 +5,11 @@ ruby '2.1.1'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.1.0.rc1'
+gem 'rails', '~> 4.1.0.rc2'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'sass-rails', '~> 4.0.2'                           # https://github.com/rails/sass-rails/issues/191
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
@@ -25,14 +25,14 @@ end
 
 group :test do
   gem 'fuubar', '~> 2.0.0.beta1'
-  gem 'jasminerice', github: 'bradphelan/jasminerice' # Latest release still depends on haml.
-  gem 'capybara', github: 'jnicklas/capybara' # Rspec 3 deprecations, waiting for the next gem release.
+  gem 'jasminerice', github: 'bradphelan/jasminerice'  # Latest release still depends on haml.
+  gem 'capybara', github: 'jnicklas/capybara'          # Rspec 3 deprecations, waiting for the next gem release.
   #gem 'capybara-email'
   gem 'poltergeist'
   gem 'factory_girl_rails'
   #gem 'timecop'
   gem 'database_cleaner'
-  gem 'simplecov', '~> 0.7.1' # https://github.com/colszowka/simplecov/issues/281
+  gem 'simplecov', '~> 0.7.1'                          # https://github.com/colszowka/simplecov/issues/281
 end
 
 group :test, :development do
