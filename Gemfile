@@ -42,6 +42,8 @@ group :test, :development do
 end
 
 group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'foreman'
   gem 'launchy'
   gem 'better_errors'
