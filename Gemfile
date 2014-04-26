@@ -9,7 +9,7 @@ gem 'rails', '~> 4.1.0'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails', '~> 4.0.2'                           # https://github.com/rails/sass-rails/issues/191
+gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
