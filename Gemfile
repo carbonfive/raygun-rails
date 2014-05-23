@@ -5,7 +5,7 @@ ruby '2.1.2'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.1.1'
 gem 'pg'
 
 gem 'slim-rails'
@@ -24,9 +24,9 @@ group :production do
 end
 
 group :test do
-  gem 'fuubar', '~> 2.0.0.beta1'
+  gem 'fuubar', '~> 2.0.0.rc1'
   gem 'jasminerice', github: 'bradphelan/jasminerice'  # Latest release still depends on haml.
-  gem 'capybara', github: 'jnicklas/capybara'          # Rspec 3 deprecations, waiting for the next gem release.
+  gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
   gem 'factory_girl_rails'
@@ -36,7 +36,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'rspec-rails'
   #gem 'cane'
   #gem 'morecane'
 end
