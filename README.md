@@ -4,15 +4,17 @@
 
 Generated with [Raygun](https://github.com/carbonfive/raygun).
 
-# Requirements
-
-To run the specs or fire up the server, be sure you have these:
-
-* Ruby 2.1 (see [.ruby-version](.ruby-version))
-* PostgreSQL 9.x with superuser 'postgres' with no password (```createuser -s postgres```)
-* PhantomJS for JavaScript testing (```brew install phantomjs```)
-
 # Development
+
+## Getting Started
+
+### Requirements
+
+To run the specs or fire up the server, be sure you have these installed:
+
+* Ruby 2.1 (see [.ruby-version](.ruby-version)).
+* PostgreSQL 9.x (```brew install postgresql```) with superuser 'postgres' with no password (```createuser -s postgres```).
+* PhantomJS for Capybara and Javascript testing (```brew install phantomjs```).
 
 ### First Time Setup
 
@@ -27,22 +29,55 @@ for details.
 
 ### Running the Specs
 
-To run all ruby and javascript specs.
+To run all Ruby and Javascript specs.
 
     $ rake
-
-Again, with coverage for the ruby specs:
-
-    $ rake spec:coverage
 
 ### Running the Application Locally
 
     $ foreman start
     $ open http://localhost:3000
 
+## Conventions
+
+### Git
+
+* Branch ```development``` is auto-deployed to acceptance.
+* Branch ```master``` is auto-deployed to production.
+* Create feature branches off of ```development``` using the naming convention ```(features|chores|bugs)/a-brief-description-######```, where ###### is the tracker id.
+* Rebase before merging into ```development```.
+* Retain merge commits for multi-commit branches when merging into ```development``` (e.g. ```git merge --no-ff branchname```).
+* Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
+
+### Code Style
+
+Generally speaking, follow the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Additionally, these are other guidelines adopted by the team:
+
+**Always use double quotes for test/spec descriptions, unless the subject is a class/module.**
+
+```ruby
+describe SomeController do
+  context "when logged in as an admin" do
+    describe "#some_method" do
+      it "does some thing"
+    end
+  end
+end
+````
+
+## Additional/Optional Development Details
+
+### Code Coverage (local)
+
+Coverage for the ruby specs:
+
+    $ rake spec:coverage
+
+Code coverage is reported to Code Climate on every build so there's a record of trending.
+
 ### Using Guard
 
-Guard is configured to run ruby and jasmine specs, and also listen for livereload connections. Growl is used for notifications.
+Guard is configured to run ruby and jasmine specs, and also listen for livereload connections.
 
     $ bundle exec guard
 
@@ -56,38 +91,34 @@ Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mai
 
 ### Continuous Integration and Deployment with CircleCI
 
-This project is configured for continuous integration and deployment with CircleCI and Heroku. Follow
-these steps for first time configuration:
-
-1. Push the project to GitHub, if you haven't already.
-1. Authenticate at [circleci.com](CircleCI) and follow this project.
-1. Be sure to enable Heroku deploys from the project settings on [circleci.com](CircleCI).
-1. The project should automatically be deployed on every successful build.
+This project is configured for continuous integration and deployment with CircleCI and Heroku.
 
 Check out [circle.yml](circle.yml) and [bin/deploy.sh](bin/deploy.sh) for details.
 
-### Deploy Manually to Heroku
+# Server Environments
 
-Install the Heroku toolbelt if you don't already have it (https://toolbelt.heroku.com/).
+### Hosting
 
-    $ heroku apps:create app-prototype
-    $ git push heroku master
-    $ heroku run rake db:migrate db:seed
-
-Continuous deployment from the build server is highly recommended.
+Acceptance and Production are hosted on Heroku under the _email@example.com_ account.
 
 ### Environment Variables
 
-Several common features and operational parameters can be set using environment variables. These are all optional.
+Several common features and operational parameters can be set using environment variables.
+
+**Required**
 
 * ```SECRET_KEY_BASE``` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
+
+**Optional**
+
 * ```HOSTNAME``` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
 * ```BASIC_AUTH_PASSWORD``` - Enable basic auth with this password.
 * ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).
 * ```PORT``` - Port to listen on (default: 3000).
-* ```UNICORN_WORKERS``` - Number of unicorn workers to spawn (default: development 1, otherwisee 3) .
+* ```UNICORN_WORKERS``` - Number of unicorn workers to spawn (default: development 1, otherwise 3).
 * ```UNICORN_BACKLOG``` - Depth of unicorn backlog (default: 16).
 
-# Considerations
+### Third Party Services
 
-...
+* Heroku for hosting.
+* CircleCI for continuous integration and deployment.
