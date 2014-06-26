@@ -5,11 +5,11 @@ ruby '2.1.2'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.1.1'
+gem 'rails', '~> 4.1.2'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
