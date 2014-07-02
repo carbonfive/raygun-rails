@@ -21,6 +21,7 @@ gem 'awesome_print'
 
 group :production, :acceptance do
   gem 'rails_stdout_logging'
+  gem 'heroku_rails_deflate'
 end
 
 group :test do
