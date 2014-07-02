@@ -19,7 +19,7 @@ gem 'uglifier'
 
 gem 'awesome_print'
 
-group :production do
+group :production, :acceptance do
   gem 'rails_stdout_logging'
 end
 
