@@ -33,7 +33,7 @@ group :test do
   gem 'factory_girl_rails'
   #gem 'timecop'
   gem 'database_cleaner'
-  gem 'simplecov', '~> 0.7.1'                          # https://github.com/colszowka/simplecov/issues/281
+  gem 'simplecov'
 end
 
 group :test, :development do
