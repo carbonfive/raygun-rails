@@ -18,9 +18,7 @@ footer {
   height: $footer-height;
   line-height: $footer-height;
 
-  .container {
-    border-top: 1px solid $gray-lighter;
-  }
+  border-top: 1px solid $gray-lighter;
 
   p {
     margin: 0;
