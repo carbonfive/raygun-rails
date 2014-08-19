@@ -71,9 +71,9 @@ end
 
 Coverage for the ruby specs:
 
-    $ rake spec:coverage
+    $ COVERAGE=true rspec
 
-Code coverage is reported to Code Climate on every build so there's a record of trending.
+Code coverage is reported to Code Climate on every CI build so there's a record of trending.
 
 ### Using Guard
 

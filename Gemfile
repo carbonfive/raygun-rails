@@ -25,7 +25,7 @@ group :production, :acceptance do
 end
 
 group :test do
-  gem 'fuubar', '~> 2.0.0.rc1'
+  gem 'fuubar'
   gem 'jasminerice', github: 'bradphelan/jasminerice'  # Latest release still depends on haml.
   gem 'capybara'
   #gem 'capybara-email'
