@@ -4,16 +4,14 @@ begin
 
   namespace :spec do
     desc "Run the code examples in spec/ except those in spec/features"
-    RSpec::Core::RakeTask.new('without_features' => 'db:test:prepare') do |t|
-      file_list = FileList['spec/**/*_spec.rb'].exclude('spec/features/**/*_spec.rb')
-
-      t.pattern = file_list
+    RSpec::Core::RakeTask.new(:without_features) do |t|
+      t.exclude_pattern = './spec/features/**/*_spec.rb'
     end
   end
 
 rescue LoadError
   namespace :spec do
-    task :without_requests do
+    task :without_features do
     end
   end
 end

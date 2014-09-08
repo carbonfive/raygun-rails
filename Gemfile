@@ -5,11 +5,11 @@ ruby '2.1.2'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.1.5'
+gem 'rails', '~> 4.2.0.beta1'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'sass-rails', '~> 5.0.0.beta1'                     # Rails 4.2 support
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
@@ -38,6 +38,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'rspec-core', github: 'rspec/rspec-core', branch: '3-1-maintenance'
   #gem 'cane'
   #gem 'morecane'
 end
