@@ -5,6 +5,14 @@ GIT
     jasminerice (0.1.0)
       coffee-rails
 
+GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: f44466ce2bd910f8c097c8026a04d7b1a948105d
+  branch: 3-1-maintenance
+  specs:
+    rspec-core (3.1.1)
+      rspec-support (~> 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -194,26 +202,24 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    rspec (3.0.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-    rspec-core (3.0.4)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.4)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-expectations (3.1.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.4)
-      rspec-support (~> 3.0.0)
-    rspec-rails (3.0.2)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.0)
+      rspec-support (~> 3.1.0)
+    rspec-rails (3.1.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-      rspec-support (~> 3.0.0)
-    rspec-support (3.0.4)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.0)
     ruby-progressbar (1.5.1)
     sass (3.4.0)
     sass-rails (5.0.0.beta1)
@@ -300,6 +306,7 @@ DEPENDENCIES
   rails (~> 4.2.0.beta1)
   rails_stdout_logging
   rb-fsevent
+  rspec-core!
   rspec-rails
   sass-rails (~> 5.0.0.beta1)
   simple_form (~> 3.1.0.rc2)
