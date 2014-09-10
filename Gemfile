@@ -38,7 +38,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'rspec-core', github: 'rspec/rspec-core', branch: '3-1-maintenance'
+  gem 'rspec-core'
   #gem 'cane'
   #gem 'morecane'
 end

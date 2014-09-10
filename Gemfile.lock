@@ -5,14 +5,6 @@ GIT
     jasminerice (0.1.0)
       coffee-rails
 
-GIT
-  remote: git://github.com/rspec/rspec-core.git
-  revision: 00392932ce71692ad15ba2905bcfbe27ab3d8506
-  branch: 3-1-maintenance
-  specs:
-    rspec-core (3.1.1)
-      rspec-support (~> 3.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -207,6 +199,8 @@ GEM
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.2)
+      rspec-support (~> 3.1.0)
     rspec-expectations (3.1.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.1.0)
@@ -308,7 +302,7 @@ DEPENDENCIES
   rails (~> 4.2.0.beta1)
   rails_stdout_logging
   rb-fsevent
-  rspec-core!
+  rspec-core
   rspec-rails
   sass-rails (~> 5.0.0.beta1)
   simple_form (~> 3.1.0.rc2)
