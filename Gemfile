@@ -38,7 +38,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'rspec-core'
   #gem 'cane'
   #gem 'morecane'
 end
