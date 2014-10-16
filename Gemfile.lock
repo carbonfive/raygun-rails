@@ -263,8 +263,6 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    turbolinks (2.3.0)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -315,6 +313,5 @@ DEPENDENCIES
   slim-rails
   spring
   spring-commands-rspec
-  turbolinks
   uglifier
   unicorn

@@ -13,7 +13,6 @@ gem 'sass-rails', '~> 5.0.0.beta1'                     # Rails 4.2 support
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'turbolinks'
 gem 'simple_form', '~> 3.1.0.rc2'                      # Bootstrap 3 support
 gem 'uglifier'
 
