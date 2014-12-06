@@ -5,15 +5,15 @@ ruby '2.1.5'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.2.0.beta4'
+gem 'rails', '~> 4.2.0.rc2'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails', '~> 5.0.0.beta1'                     # Rails 4.2 support
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'simple_form', '~> 3.1.0.rc2'                      # Bootstrap 3 support
+gem 'simple_form'
 gem 'uglifier'
 
 gem 'awesome_print'
