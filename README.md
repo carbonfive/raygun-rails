@@ -10,7 +10,7 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 
 ### Requirements
 
-To run the specs or fire up the server, be sure you have these installed:
+To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 2.2 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.x (```brew install postgresql```) with superuser 'postgres' with no password (```createuser -s postgres```).
@@ -18,11 +18,7 @@ To run the specs or fire up the server, be sure you have these installed:
 
 ### First Time Setup
 
-After cloning, run these commands to install missing gems and prepare the database.
-
-    $ gem install bundler
-    $ bundle
-    $ rake db:setup db:sample_data
+After cloning, run [bin/setup](bin/setup) to install missing gems and prepare the database.
 
 Note, ```rake db:sample_data``` loads a small set of data for development. Check out [db/sample_data.rb](db/sample_data.rb)
 for details.
