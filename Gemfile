@@ -5,7 +5,7 @@ ruby '2.1.5'
 
 gem 'unicorn'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.2.0.rc2'
+gem 'rails', '~> 4.2.0'
 gem 'pg'
 
 gem 'slim-rails'
