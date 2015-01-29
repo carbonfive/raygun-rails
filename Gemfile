@@ -28,7 +28,6 @@ group :test do
   gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
-  gem 'factory_girl_rails'
   #gem 'timecop'
   gem 'database_cleaner'
   gem 'simplecov'
@@ -36,6 +35,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'jasmine-rails'
   #gem 'cane'
   #gem 'morecane'

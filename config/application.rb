@@ -21,10 +21,12 @@ module AppPrototype
 
     # Disable unwanted generators.
     config.generators do |generate|
+      generate.javascripts   true
       generate.stylesheets   false
-      #generate.helper        false
+      generate.helper        false
+      generate.factory_girl  true
       generate.routing_specs false
-      #generate.view_specs    false
+      generate.view_specs    true
       generate.request_specs false
     end
 
