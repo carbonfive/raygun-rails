@@ -25,7 +25,6 @@ end
 
 group :test do
   gem 'fuubar'
-  gem 'jasminerice', github: 'bradphelan/jasminerice'  # Latest release still depends on haml.
   gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
@@ -37,6 +36,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'jasmine-rails'
   #gem 'cane'
   #gem 'morecane'
 end
@@ -51,7 +51,6 @@ group :development do
   gem 'quiet_assets'
   gem 'guard', '~> 2'
   gem 'guard-rspec'
-  gem 'guard-jasmine'
   gem 'guard-livereload'
   gem 'rb-fsevent'
   gem 'growl'
