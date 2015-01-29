@@ -1,7 +1,6 @@
 test:
   override:
-    - bundle exec rake spec:without_features spec:features
-    - bundle exec guard-jasmine
+    - bundle exec rake
   post:
     - bundle exec rake db:sample_data
 
