@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'puma'
+gem 'rack-timeout'
 gem 'rack-canonical-host'
 gem 'rails', '~> 4.2.0'
 gem 'pg'

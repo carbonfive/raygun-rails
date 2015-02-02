@@ -176,6 +176,7 @@ GEM
       rack (~> 1.0)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.2.0)
     rails (4.2.0)
       actionmailer (= 4.2.0)
       actionpack (= 4.2.0)
@@ -308,6 +309,7 @@ DEPENDENCIES
   puma
   quiet_assets
   rack-canonical-host
+  rack-timeout
   rails (~> 4.2.0)
   rails_stdout_logging
   rb-fsevent
