@@ -1,8 +1,8 @@
 test:
   override:
-    - bundle exec rake
+    - rake
   post:
-    - bundle exec rake db:sample_data
+    - rake db:sample_data
 
 deployment:
   acceptance:
