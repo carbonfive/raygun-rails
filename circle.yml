@@ -14,7 +14,7 @@ deployment:
           timeout: 360
 
   production:
-    branch: master 
+    branch: bugs/deploy.sh 
     commands:
       - ./bin/deploy.sh app-prototype:
           timeout: 360
