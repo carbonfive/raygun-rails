@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'puma'
-gem 'rack-timeout'
 gem 'rack-canonical-host'
 gem 'rails', '~> 4.2.0'
 gem 'pg'
@@ -20,6 +19,7 @@ gem 'uglifier'
 gem 'awesome_print'
 
 group :production, :acceptance do
+  gem 'rack-timeout'
   gem 'rails_stdout_logging'
   gem 'heroku_rails_deflate'
 end
