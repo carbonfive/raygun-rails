@@ -28,6 +28,9 @@ for details.
 To run all Ruby and Javascript specs.
 
     $ rake
+    $ ./bin/rake
+
+Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/rspec``` and ```./bin/rails``` too). You can add ```./bin``` to your PATH too, then you'll always use the springified bins when they exist. See [rails/spring](https://github.com/rails/spring) for additional information. 
 
 ### Running the Application Locally
 
