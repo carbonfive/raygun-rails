@@ -13,24 +13,26 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 2.2 (see [.ruby-version](.ruby-version)).
-* PostgreSQL 9.x (```brew install postgresql```) with superuser 'postgres' with no password (```createuser -s postgres```).
+* PostgreSQL 9.x (```brew install postgresql```) with superuser 'postgres' with no password
+  (```createuser -s postgres```).
 * PhantomJS for Capybara and Javascript testing (```brew install phantomjs```).
 
 ### First Time Setup
 
-After cloning, run [bin/setup](bin/setup) to install missing gems and prepare the database.
+After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
 
-Note, ```rake db:sample_data``` loads a small set of data for development. Check out [db/sample_data.rb](db/sample_data.rb)
-for details.
+Note, ```rake db:sample_data``` loads a small set of data for development. Check out
+[db/sample_data.rb](db/sample_data.rb) for details.
 
 ### Running the Specs
 
 To run all Ruby and Javascript specs.
 
-    $ rake
     $ ./bin/rake
 
-Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/rspec``` and ```./bin/rails``` too). You can add ```./bin``` to your PATH too, then you'll always use the springified bins when they exist. See [rails/spring](https://github.com/rails/spring) for additional information. 
+Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/rspec``` and ```./bin/rails``` too). You
+can add ```./bin``` to your PATH too, then you'll always use the springified bins when they exist. See
+[rails/spring](https://github.com/rails/spring) for additional information. 
 
 ### Running the Application Locally
 
@@ -43,14 +45,17 @@ Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/
 
 * Branch ```development``` is auto-deployed to acceptance.
 * Branch ```master``` is auto-deployed to production.
-* Create feature branches off of ```development``` using the naming convention ```(features|chores|bugs)/a-brief-description-######```, where ###### is the tracker id.
+* Create feature branches off of ```development``` using the naming convention
+  ```(features|chores|bugs)/a-brief-description-######```, where ###### is the tracker id.
 * Rebase your branch before merging into ```development``` to produce clean merge bubbles.
-* Retain merge commits for multi-commit branches when merging into ```development``` (e.g. ```git merge --no-ff branchname```).
+* Retain merge commits for multi-commit branches when merging into ```development``` (e.g.
+  ```git merge --no-ff branchname```).
 * Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
 
 ### Code Style
 
-Generally speaking, follow the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Additionally, these are other guidelines adopted by the team:
+Generally speaking, follow the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Additionally, these are
+other guidelines adopted by the team:
 
 **Always use double quotes for test/spec descriptions, unless the subject is a class/module.**
 
