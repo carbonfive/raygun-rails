@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Heroku uses the ruby version to configure your application's runtime.
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'puma'
 gem 'rack-canonical-host'
