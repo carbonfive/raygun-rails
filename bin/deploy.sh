@@ -28,7 +28,7 @@ heroku scale worker=0 --app $APP_NAME
 
 # This little hacky morsel gets around a change in the latest git client.
 # A better solution is in the works (we hope).
-[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow
+[ ! -s \"$(git rev-parse --git-dir)/shallow\" ] || git fetch —-unshallow
 
 git push -f heroku $SHA_TO_DEPLOY:refs/heads/master
 
