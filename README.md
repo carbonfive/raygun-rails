@@ -18,8 +18,32 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 * PhantomJS for Capybara and Javascript testing (```brew install phantomjs```).
 
 ### First Time Setup
+```sh
+## Install
+$ gem install raygun
 
-After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
+## Generate Project
+$ raygun my_project
+
+#  Raygun will create new app in directory: my_project...
+# 
+#  ...
+#
+#  Zap! Your application is ready. Next steps...
+#
+#  # Install updated dependencies and prepare the database
+#  $ cd my_project
+#  $ ./bin/setup
+#  
+#  # Run the specs (they should all pass)
+#  $ rake
+# 
+#  # Run the app and check things out
+#  $ foreman start
+#  $ open http://localhost:3000
+```
+
+See [./bin/setup](bin/setup) for project setup details
 
 Note, ```rake db:sample_data``` loads a small set of data for development. Check out
 [db/sample_data.rb](db/sample_data.rb) for details.
