@@ -2,7 +2,7 @@
 
 ...
 
-Generated with [Raygun](https://github.com/carbonfive/raygun).
+Looking for the [Raygun](https://github.com/carbonfive/raygun) gem? Check out https://github.com/carbonfive/raygun
 
 # Development
 
@@ -18,30 +18,8 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 * PhantomJS for Capybara and Javascript testing (```brew install phantomjs```).
 
 ### First Time Setup
-```sh
-## Install
-$ gem install raygun
 
-## Generate Project
-$ raygun my_project
-
-#  Raygun will create new app in directory: my_project...
-# 
-#  ...
-#
-#  Zap! Your application is ready. Next steps...
-#
-#  # Install updated dependencies and prepare the database
-#  $ cd my_project
-#  $ ./bin/setup
-#  
-#  # Run the specs (they should all pass)
-#  $ rake
-# 
-#  # Run the app and check things out
-#  $ foreman start
-#  $ open http://localhost:3000
-```
+After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
 
 See [./bin/setup](bin/setup) for project setup details
 
