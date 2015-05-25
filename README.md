@@ -21,8 +21,6 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
 
-See [./bin/setup](bin/setup) for project setup details
-
 Note, ```rake db:sample_data``` loads a small set of data for development. Check out
 [db/sample_data.rb](db/sample_data.rb) for details.
 
