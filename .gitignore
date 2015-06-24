@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/spec/examples.txt
 
 # Ignore compiled assets.
 /public/assets
