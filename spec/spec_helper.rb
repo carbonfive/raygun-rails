@@ -64,7 +64,7 @@ RSpec.configure do |config|
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
 
-# These two settings work together to allow you to limit a spec run
+  # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
   # get run.
@@ -106,7 +106,7 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  # config.order = :random
+  config.order = :random
 
   # Run non-feature specs (shuffled) before feature specs.
   # config.register_ordering(:global) do |items|
