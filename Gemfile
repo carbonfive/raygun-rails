@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'autoprefixer-rails'
 
 gem 'awesome_print'
 
