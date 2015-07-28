@@ -32,7 +32,7 @@ To run all Ruby and Javascript specs.
 
 Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/rspec``` and ```./bin/rails``` too). You
 can add ```./bin``` to your PATH too, then you'll always use the springified bins when they exist. See
-[rails/spring](https://github.com/rails/spring) for additional information. 
+[rails/spring](https://github.com/rails/spring) for additional information.
 
 ### Running the Application Locally
 
@@ -119,8 +119,8 @@ Several common features and operational parameters can be set using environment 
 * ```BASIC_AUTH_PASSWORD``` - Enable basic auth with this password.
 * ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).
 * ```PORT``` - Port to listen on (default: 3000).
-* ```PUMA_WORKERS``` - Number of puma workers to spawn (default: development 1, otherwise 3).
-* ```MIN_THREADS``` - Minimum threads per worker (default: 4).
+* ```PUMA_WORKERS``` - Number of puma workers to spawn (default: 1).
+* ```MIN_THREADS``` - Minimum threads per worker (default: 8).
 * ```MAX_THREADS``` - Maximum threads per worker (default: 16).
 
 ### Third Party Services
