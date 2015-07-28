@@ -122,6 +122,7 @@ Several common features and operational parameters can be set using environment 
 * ```PUMA_WORKERS``` - Number of puma workers to spawn (default: 1).
 * ```MIN_THREADS``` - Minimum threads per worker (default: 8).
 * ```MAX_THREADS``` - Maximum threads per worker (default: 16).
+* ```DB_POOL``` - Number of DB connections per pool (i.e. per worker) (default: MAX_THREADS or 5).
 
 ### Third Party Services
 
