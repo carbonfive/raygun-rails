@@ -6,13 +6,15 @@ development: &default
   encoding: unicode
   database: app_prototype_development
   username: postgres
-  pool: 5
+  pool: <%= ENV['DB_POOL'].presence || ENV['MAX_THREADS'].presence || 5 %>
   timeout: 5000
 
+# Don't use the erb specified pool setting here so CircleCI doesn't fall over
 test:
   <<: *default
   database: app_prototype_test
   min_messages: warning
+  pool: 5
 
 acceptance:
   <<: *default
