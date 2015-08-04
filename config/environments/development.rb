@@ -41,4 +41,9 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   
+  # Disable Rack::Lock because we are using Puma (even in development)
+  # If you setup your dev enviroment to use a different multi process server (like Unicorn),
+  # you should comment this line
+  config.middleware.delete "Rack::Lock"  
+
 end
