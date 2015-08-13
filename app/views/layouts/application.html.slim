@@ -33,7 +33,7 @@ html
         - flash.each do |name, msg|
           .alert.alert-dismissable class=alert_class(name)
             button.close type='button' data-dismiss='alert' aria-hidden='true' &times;
-            =raw(msg)
+            = raw(msg)
         = yield
 
     footer
