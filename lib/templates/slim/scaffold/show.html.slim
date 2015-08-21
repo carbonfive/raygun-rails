@@ -14,5 +14,5 @@ dl
 
 /- if can?(:destroy, @<%= singular_table_name %>)
 '
-= link_to text_with_icon('Destroy', 'remove'), <%= singular_table_name %>_path(@<%= singular_table_name %>), \
+= link_to text_with_icon('Destroy', 'remove'), <%= singular_table_name %>_path(@<%= singular_table_name %>),
           method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger'
