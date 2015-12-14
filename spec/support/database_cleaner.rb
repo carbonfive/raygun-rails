@@ -4,6 +4,7 @@
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
+    Rails.application.load_seed
   end
 
   config.before(:each) do
@@ -20,5 +21,8 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    if DatabaseCleaner.connections.any? { |connection| connection.strategy.is_a? DatabaseCleaner::Generic::Truncation }
+      Rails.application.load_seed
+    end
   end
 end
