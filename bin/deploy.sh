@@ -27,9 +27,13 @@ heroku maintenance:on --app $APP_NAME
 
 heroku scale worker=0:$WORKER_DYNO_TYPE --app $APP_NAME
 
-# This little hacky morsel gets around a change in the latest git client.
-# A better solution is in the works (we hope).
-[ ! -s \"$(git rev-parse --git-dir)/shallow\" ] || git fetch —-unshallow
+# CircleCI makes a shallow clone to reduce network bandwidth. Pushing from a
+# shallow clone often works, but it can fail since shallow clones don't have
+# the full history. The error message looks like:
+#   ! [remote rejected] ... (missing necessary objects)
+# The following converts the repo to a complete one (git fetch --unshallow)
+# if it is shallow (i.e. the file ".git/shallow" exists)
+[ ! -s "$(git rev-parse --git-dir)/shallow" ] || git fetch --unshallow
 
 git push -f heroku $SHA_TO_DEPLOY:refs/heads/master
 
