@@ -61,6 +61,12 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  # Enable aggregate failures unless explcitly disabled at the spec level.
+  # See http://rspec.info/blog/2015/06/rspec-3-3-has-been-released/#expectations-new-aggregratefailures-api
+  config.define_derived_metadata do |meta|
+    meta[:aggregate_failures] = true unless meta.key?(:aggregate_failures)
+  end
+
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
 
