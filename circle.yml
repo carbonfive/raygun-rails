@@ -1,10 +1,10 @@
 test:
   override:
     # Default task run all specs.
-    - rake
+    - bundle exec rake
   post:
     # Make sure sample_data still runs correctly, since it's easy to miss.
-    - rake db:sample_data
+    - bundle exec rake db:sample_data
 
 deployment:
   acceptance:
