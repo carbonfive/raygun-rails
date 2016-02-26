@@ -1,6 +1,6 @@
 test:
   override:
-    # Default task run all specs.
+    # Default task runs all specs (ruby and javascript).
     - bundle exec rake
   post:
     # Make sure sample_data still runs correctly, since it's easy to miss.
@@ -14,7 +14,7 @@ deployment:
           timeout: 360
 
   production:
-    branch: master 
+    branch: master
     commands:
       - ./bin/deploy.sh app-prototype:
           timeout: 360

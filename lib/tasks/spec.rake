@@ -16,7 +16,7 @@ rescue LoadError
   end
 end
 
-Rake::Task['spec'].clear_actions
-
-desc 'Runs all specs'
-task spec: ['spec:without_features', 'spec:features', 'spec:javascripts']
+namespace :spec do
+  desc "Run all specs (ruby and javascript)"
+  task all: ['spec', 'spec:javascripts']
+end

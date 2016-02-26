@@ -8,4 +8,4 @@ AppPrototype::Application.load_tasks
 
 # Spec is the default rake target.
 task(:default).clear
-task default: 'spec'
+task default: 'spec:all'
