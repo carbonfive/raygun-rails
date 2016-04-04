@@ -5,7 +5,7 @@ ruby '2.3.0'
 
 gem 'puma'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.2.5'
+gem 'rails', '~> 4.2.6'
 gem 'pg'
 
 gem 'slim-rails'
