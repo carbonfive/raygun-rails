@@ -49,9 +49,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
-  # gem 'guard', '~> 2'
-  # gem 'guard-rspec', '~> 4.6.4'
+  # gem 'guard'
+  # gem 'guard-rspec', '>= 4.6.5'                  # Resolves to 1.x without a version constraint. :/
   # gem 'guard-livereload'
-  # gem 'rb-fsevent'
-  # gem 'growl'
 end
