@@ -120,9 +120,9 @@ Several common features and operational parameters can be set using environment 
 * ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).
 * ```PORT``` - Port to listen on (default: 3000).
 * ```PUMA_WORKERS``` - Number of puma workers to spawn (default: 1).
-* ```MIN_THREADS``` - Minimum threads per worker (default: 8).
-* ```MAX_THREADS``` - Maximum threads per worker (default: 16).
-* ```DB_POOL``` - Number of DB connections per pool (i.e. per worker) (default: MAX_THREADS or 5).
+* ```PUMA_THREADS``` - Threads per worker (default: 5).
+* ```DB_POOL``` - Number of DB connections per pool (i.e. per worker) (default: PUMA_THREADS or 5).
+* ```RAILS_LOG_TO_STDOUT``` - Log to standard out (default: false).
 
 ### Third Party Services
 
