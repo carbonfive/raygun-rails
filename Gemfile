@@ -5,7 +5,8 @@ ruby '2.3.1'
 
 gem 'puma'
 gem 'rack-canonical-host'
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 5.0.0.rc1'
+gem 'listen'
 gem 'pg'
 
 gem 'slim-rails'
@@ -21,12 +22,10 @@ gem 'awesome_print'
 
 group :production, :acceptance do
   gem 'rack-timeout'
-  gem 'rails_stdout_logging'
   gem 'heroku_rails_deflate'
 end
 
 group :test do
-  gem 'fuubar'
   gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
@@ -36,22 +35,23 @@ group :test do
 end
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5.0.beta3'
   gem 'factory_girl_rails'
   gem 'jasmine-rails'
 end
 
 group :development do
   gem 'spring'
+  gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
   gem 'foreman'
   gem 'launchy'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
-  gem 'guard', '~> 2'
-  gem 'guard-rspec'
-  gem 'guard-livereload'
-  gem 'rb-fsevent'
-  gem 'growl'
+  # gem 'guard', '~> 2'
+  # gem 'guard-rspec', '~> 4.6.4'
+  # gem 'guard-livereload'
+  # gem 'rb-fsevent'
+  # gem 'growl'
 end
