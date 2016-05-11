@@ -9,7 +9,3 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-
-# Don't initialize the application when precompiling assets. Doing so on Heroku problematic
-# since the environment config is not available during slug completions (see user-env-compile).
-Rails.application.config.assets.initialize_on_precompile = false
