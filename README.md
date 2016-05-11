@@ -13,15 +13,14 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 2.3 (see [.ruby-version](.ruby-version)).
-* PostgreSQL 9.x (```brew install postgresql```) with superuser 'postgres' with no password
-  (```createuser -s postgres```).
-* PhantomJS for Capybara and Javascript testing (```brew install phantomjs```).
+* PostgreSQL 9.x (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
+* PhantomJS 2.x for Capybara and Javascript testing (`brew install phantomjs`).
 
 ### First Time Setup
 
 After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
 
-Note, ```rake db:sample_data``` loads a small set of data for development. Check out
+Note, `rake db:sample_data` (run as part of setup) loads a small set of data for development. Check out
 [db/sample_data.rb](db/sample_data.rb) for details.
 
 ### Running the Specs
@@ -30,8 +29,8 @@ To run all Ruby and Javascript specs.
 
     $ ./bin/rake
 
-Note: ```./bin/rake``` runs the springified version of rake (there's a ```./bin/rspec``` and ```./bin/rails``` too). You
-can add ```./bin``` to your PATH too, then you'll always use the springified bins when they exist. See
+Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec` and `./bin/rails` too). You can add
+`./bin` to your PATH too, then you'll always use the springified bins when they exist. See
 [rails/spring](https://github.com/rails/spring) for additional information.
 
 ### Running the Application Locally
@@ -43,13 +42,12 @@ can add ```./bin``` to your PATH too, then you'll always use the springified bin
 
 ### Git
 
-* Branch ```development``` is auto-deployed to acceptance.
-* Branch ```master``` is auto-deployed to production.
-* Create feature branches off of ```development``` using the naming convention
-  ```(features|chores|bugs)/a-brief-description-######```, where ###### is the tracker id.
-* Rebase your branch before merging into ```development``` to produce clean merge bubbles.
-* Retain merge commits for multi-commit branches when merging into ```development``` (e.g.
-  ```git merge --no-ff branchname```).
+* Branch `development` is auto-deployed to acceptance.
+* Branch `master` is auto-deployed to production.
+* Create feature branches off of `development` using the naming convention
+  `(features|chores|bugs)/a-brief-description-######`, where ###### is the tracker id.
+* Rebase your branch before merging into `development` to produce clean merge bubbles.
+* Retain merge commits for multi-commit branches when merging into `development` (e.g. `git merge --no-ff branchname`).
 * Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
 
 ### Code Style
@@ -67,7 +65,7 @@ describe SomeController do
     end
   end
 end
-````
+```
 
 ## Additional/Optional Development Details
 
@@ -111,18 +109,18 @@ Several common features and operational parameters can be set using environment 
 
 **Required**
 
-* ```SECRET_KEY_BASE``` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
+* `SECRET_KEY_BASE` - Secret key base for verfying signed cookies. Should be 30+ random characters and secret!
 
 **Optional**
 
-* ```HOSTNAME``` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
-* ```BASIC_AUTH_PASSWORD``` - Enable basic auth with this password.
-* ```BASIC_AUTH_USER``` - Set a basic auth username (not required, password enables basic auth).
-* ```PORT``` - Port to listen on (default: 3000).
-* ```PUMA_WORKERS``` - Number of puma workers to spawn (default: 1).
-* ```PUMA_THREADS``` - Threads per worker (default: 5).
-* ```DB_POOL``` - Number of DB connections per pool (i.e. per worker) (default: PUMA_THREADS or 5).
-* ```RAILS_LOG_TO_STDOUT``` - Log to standard out (default: false).
+* `HOSTNAME` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
+* `BASIC_AUTH_PASSWORD` - Enable basic auth with this password.
+* `BASIC_AUTH_USER` - Set a basic auth username (not required, password enables basic auth).
+* `PORT` - Port to listen on (default: 3000).
+* `PUMA_WORKERS` - Number of puma workers to spawn (default: 1).
+* `PUMA_THREADS` - Threads per worker (default: 5).
+* `DB_POOL` - Number of DB connections per pool (i.e. per worker) (default: PUMA_THREADS or 5).
+* `RAILS_LOG_TO_STDOUT` - Log to standard out (default: false).
 
 ### Third Party Services
 
