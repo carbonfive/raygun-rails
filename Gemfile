@@ -10,7 +10,7 @@ gem 'listen'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
