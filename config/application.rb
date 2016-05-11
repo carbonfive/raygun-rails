@@ -23,13 +23,14 @@ module AppPrototype
 
     # Disable unwanted generators.
     config.generators do |generate|
-      generate.javascripts   true
-      generate.stylesheets   false
-      generate.helper        false
-      generate.factory_girl  true
-      generate.routing_specs false
-      generate.view_specs    true
-      generate.request_specs false
+      generate.javascripts      true
+      generate.stylesheets      false
+      generate.helper           false
+      generate.factory_girl     true
+      generate.routing_specs    false
+      generate.view_specs       false
+      generate.controller_specs false
+      generate.request_specs    false
     end
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
