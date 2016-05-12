@@ -20,7 +20,7 @@ gem "uglifier"
 
 gem "awesome_print"
 
-group :production, :acceptance do
+group :production do
   gem "rack-timeout"
 end
 
