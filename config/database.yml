@@ -17,10 +17,6 @@ test:
   <<: *default
   database: app_prototype_test
 
-acceptance:
-  <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>

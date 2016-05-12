@@ -132,11 +132,12 @@ Several common features and operational parameters can be set using environment 
 **Optional**
 
 * `HOSTNAME` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
-* `FORCE_SSL` - Require all requests to come over a secure connection (default: false).
+  Also used by mailers to generate full URLs.
+* `FORCE_SSL` - Require SSL for all requests, redirecting if necessary (default: false).
 * `BASIC_AUTH_PASSWORD` - Enable basic auth with this password.
 * `BASIC_AUTH_USER` - Set a basic auth username (not required, password enables basic auth).
 * `RACK_TIMEOUT_SERVICE_TIMEOUT` - Terminate requests that take longer than this time (default: 15s).
-* `ASSET_HOST` - Asset host for static assets (e.g. CDN) (default: none).
+* `ASSET_HOST` - Load assets from this host (e.g. CDN) (default: none).
 * `PORT` - Port to listen on (default: 3000).
 * `WEB_CONCURRENCY` - Number of puma workers to spawn (default: 1).
 * `RAILS_MAX_THREADS` - Threads per worker (default: 5).
