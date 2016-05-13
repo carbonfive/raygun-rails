@@ -86,10 +86,6 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    heroku_rails_deflate (1.0.3)
-      actionpack (>= 3.2.13)
-      activesupport (>= 3.2.13)
-      rack (>= 1.4.5)
     i18n (0.7.0)
     jasmine-core (2.4.1)
     jasmine-rails (0.12.4)
@@ -258,7 +254,6 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   foreman
-  heroku_rails_deflate
   jasmine-rails
   jquery-rails
   launchy
@@ -280,5 +275,8 @@ DEPENDENCIES
   spring-watcher-listen
   uglifier
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
-   1.11.2
+   1.12.3

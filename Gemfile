@@ -22,7 +22,6 @@ gem 'awesome_print'
 
 group :production, :acceptance do
   gem 'rack-timeout'
-  gem 'heroku_rails_deflate'
 end
 
 group :test do
