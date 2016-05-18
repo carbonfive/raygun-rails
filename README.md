@@ -8,6 +8,11 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 
 ## Getting Started
 
+### tl;dr
+One click to deploy this as a free Heroku app, but note that you'll need to perform the setup below to work on it locally.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ### Requirements
 
 To run the specs or fire up the server, be sure you have these installed (and running):
