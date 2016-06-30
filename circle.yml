@@ -1,3 +1,9 @@
+dependencies:
+  pre:
+    # Let's make sure we're always using the latest rubygems and bundler.
+    - gem update --system
+    - gem install bundler
+
 test:
   override:
     # Default task runs all specs (ruby and javascript).
