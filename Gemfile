@@ -5,7 +5,7 @@ ruby '2.3.1'
 
 gem 'puma'
 gem 'rack-canonical-host'
-gem 'rails', '~> 5.0.0.rc2'
+gem 'rails', '~> 5.0'
 gem 'listen'
 gem 'pg'
 
