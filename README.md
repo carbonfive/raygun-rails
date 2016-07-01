@@ -114,13 +114,16 @@ Several common features and operational parameters can be set using environment 
 **Optional**
 
 * `HOSTNAME` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
+* `FORCE_SSL` - Require all requests to come over a secure connection (default: false).
 * `BASIC_AUTH_PASSWORD` - Enable basic auth with this password.
 * `BASIC_AUTH_USER` - Set a basic auth username (not required, password enables basic auth).
+* `ASSET_HOST` - Asset host for static assets (e.g. CDN) (default: none).
 * `PORT` - Port to listen on (default: 3000).
 * `PUMA_WORKERS` - Number of puma workers to spawn (default: 1).
 * `PUMA_THREADS` - Threads per worker (default: 5).
 * `DB_POOL` - Number of DB connections per pool (i.e. per worker) (default: PUMA_THREADS or 5).
-* `RAILS_LOG_TO_STDOUT` - Log to standard out (default: false).
+* `RAILS_LOG_TO_STDOUT` - Log to standard out, good for Heroku (default: false).
+* `RAILS_SERVE_STATIC_FILES` - Serve static assets, good for Heroku (default: false).
 
 ### Third Party Services
 
