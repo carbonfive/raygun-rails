@@ -1,4 +1,4 @@
-= simple_form_for(@<%= singular_table_name %>) do |f|
+= simple_form_for(<%= singular_table_name %>) do |f|
   = f.error_notification
 
   .form-inputs
@@ -10,4 +10,3 @@
     = text_with_icon "#{btn_action_prefix} <%= singular_table_name.humanize %>", action_icon_name
   '
   = link_to text_with_icon('Back', 'chevron-left'), :back, class: 'btn btn-default'
-
