@@ -34,7 +34,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 3.5.0.beta3'
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'jasmine-rails'
 end
