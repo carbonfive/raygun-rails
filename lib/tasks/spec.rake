@@ -15,8 +15,3 @@ rescue LoadError
     end
   end
 end
-
-namespace :spec do
-  desc "Run all specs (ruby and javascript)"
-  task all: ['spec', 'spec:javascripts']
-end

@@ -14,7 +14,7 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 * Ruby 2.3 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.x (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
-* PhantomJS 2.x for Capybara and Javascript testing (`brew install phantomjs`).
+* PhantomJS 2.x for Capybara testing (`brew install phantomjs`).
 
 ### First Time Setup
 
@@ -79,7 +79,7 @@ Code coverage is reported to Code Climate on every CI build so there's a record 
 
 ### Using Guard
 
-Guard is configured to run ruby and jasmine specs, and also listen for livereload connections.
+Guard is configured to run ruby specs, and also listen for livereload connections.
 
     $ bundle exec guard
 
