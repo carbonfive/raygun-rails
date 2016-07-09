@@ -5,7 +5,3 @@
 require File.expand_path('../config/application', __FILE__)
 
 AppPrototype::Application.load_tasks
-
-# Spec is the default rake target.
-task(:default).clear
-task default: 'spec:all'
