@@ -28,7 +28,6 @@ group :test do
   gem 'capybara'
   #gem 'capybara-email'
   gem 'poltergeist'
-  #gem 'timecop'
   gem 'database_cleaner'
   gem 'simplecov'
 end
