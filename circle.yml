@@ -9,7 +9,7 @@ test:
     # Default task runs all specs (ruby and javascript).
     - bundle exec rake
   post:
-    # Make sure sample_data still runs correctly, since it's easy to miss.
+    # Make sure seed and sample_data still run correctly, since they're easy to miss.
     - bundle exec rake db:seed db:sample_data
 
 deployment:
