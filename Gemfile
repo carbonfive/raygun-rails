@@ -11,6 +11,7 @@ gem 'pg'
 
 gem 'slim-rails'
 gem 'sassc-rails'
+gem 'sass-rails', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-rails'
