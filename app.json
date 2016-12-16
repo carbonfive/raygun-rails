@@ -1,0 +1,9 @@
+{
+  "name": "Raygun Rails App Template",
+  "description": "Rails application generator that builds applications with the common customization stuff already done.",
+  "repository": "https://github.com/carbonfive/raygun-rails",
+  "website": "https://github.com/carbonfive/raygun",
+  "logo": "https://raw.github.com/carbonfive/raygun/master/marvin.jpg",
+  "keywords": ["ruby", "rails", "template", "raygun", "carbonfive"],
+  "success_url": "/"
+}
