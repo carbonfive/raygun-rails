@@ -2,7 +2,7 @@
 
 ...
 
-Generated with [Raygun](https://github.com/carbonfive/raygun).
+Looking for the [Raygun](https://github.com/carbonfive/raygun) gem? Check out https://github.com/carbonfive/raygun
 
 # Development
 
