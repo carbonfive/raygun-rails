@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 <% module_namespacing do -%>
-describe <%= class_name %>Controller do
+describe <%= class_name %>Controller, <%= type_metatag(:controller) %> do
 
 <% for action in actions -%>
   describe "GET #<%= action %>" do

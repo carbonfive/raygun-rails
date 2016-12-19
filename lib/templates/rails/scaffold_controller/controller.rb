@@ -1,9 +1,10 @@
 <% if namespaced? -%>
-require_dependency "<%= namespaced_file_path %>/application_controller"
+require_dependency "<%= namespaced_path %>/application_controller"
 
 <% end -%>
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
+
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,7 +25,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to @<%= singular_table_name %>, notice: <%= "'#{human_name} was successfully created.'" %>
+      redirect_to @<%= singular_table_name %>, notice: <%= %{"#{human_name} was successfully created."} %>
     else
       render :new
     end
@@ -32,7 +33,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def update
     if @<%= orm_instance.update("#{singular_table_name}_params") %>
-      redirect_to @<%= singular_table_name %>, notice: <%= "'#{human_name} was successfully updated.'" %>
+      redirect_to @<%= singular_table_name %>, notice: <%= %{"#{human_name} was successfully updated."} %>
     else
       render :edit
     end
@@ -40,7 +41,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def destroy
     @<%= orm_instance.destroy %>
-    redirect_to <%= index_helper %>_url, notice: <%= "'#{human_name} was successfully destroyed.'" %>
+    redirect_to <%= index_helper %>_url, notice: <%= %{"#{human_name} was successfully destroyed."} %>
   end
 
   private
@@ -52,11 +53,11 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def <%= "#{singular_table_name}_params" %>
-  <%- if attributes_names.empty? -%>
-  params.fetch(:<%= singular_table_name %>, {})
-  <%- else -%>
-  params.require(:<%= singular_table_name %>).permit(<%= attributes_names.map { |name| ":#{name}" }.join(', ') %>)
-  <%- end -%>
+<%- if attributes_names.empty? -%>
+    params.fetch(:<%= singular_table_name %>, {})
+<%- else -%>
+    params.require(:<%= singular_table_name %>).permit(<%= attributes_names.map { |name| ":#{name}" }.join(', ') %>)
+<%- end -%>
   end
 end
 <% end -%>
