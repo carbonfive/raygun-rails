@@ -12,7 +12,7 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 
 To run the specs or fire up the server, be sure you have these installed (and running):
 
-* Ruby 2.3 (see [.ruby-version](.ruby-version)).
+* Ruby 2.4 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.x (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
 * PhantomJS 2.x for Capybara testing (`brew install phantomjs`).
 
