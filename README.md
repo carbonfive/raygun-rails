@@ -46,8 +46,8 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 * Branch `master` is auto-deployed to production.
 * Create feature branches off of `development` using the naming convention
   `(features|chores|bugs)/a-brief-description-######`, where ###### is the tracker id.
-* Rebase your branch before merging into `development` to produce clean merge bubbles.
-* Retain merge commits for multi-commit branches when merging into `development` (e.g. `git merge --no-ff branchname`).
+* Rebase your feature branch before merging into `development` to produce clean merge bubbles.
+* Always, retain merge commits when merging into `development` (e.g. `git merge --no-ff branchname`).
 * Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
 
 ### Code Style
