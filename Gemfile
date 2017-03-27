@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 # Heroku uses the ruby version to configure your application's runtime.
-ruby '2.4.0'
+ruby '2.4.1'
 
 gem 'puma'
 gem 'rack-canonical-host'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.0.rc1'
 gem 'listen'
 gem 'pg'
 
