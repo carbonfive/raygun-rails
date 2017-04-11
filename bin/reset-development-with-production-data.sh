@@ -1,5 +1,6 @@
 #!/bin/sh
-source "reset-config.cfg"
+cwd=`dirname "$0"`
+source "$cwd/reset-config.cfg"
 
 echo "Loading production data in development(destructive)..."
 sleep 3
