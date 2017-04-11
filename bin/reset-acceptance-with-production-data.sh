@@ -1,5 +1,6 @@
 #!/bin/sh
-source "reset-config.cfg"
+cwd=`dirname "$0"`
+source "$cwd/reset-config.cfg"
 
 echo "Copying production data to acceptance (destructive)..."
 sleep 3
