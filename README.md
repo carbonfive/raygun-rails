@@ -15,10 +15,11 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 * Ruby 2.4 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.x (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
 * PhantomJS 2.x for Capybara testing (`brew install phantomjs`).
+* Node and NPM 7.x for Webpacker and React
 
 ### First Time Setup
 
-After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
+After cloning, run [./bin/setup](bin/setup) to install missing gems, npm packages and prepare the database.
 
 Note, `rake db:sample_data` (run as part of setup) loads a small set of data for development. Check out
 [db/sample_data.rb](db/sample_data.rb) for details.
@@ -35,8 +36,12 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 
 ### Running the Application Locally
 
-    $ foreman start
+    $ foreman start -f Procfile.dev
     $ open http://localhost:3000
+
+Note: The React/Webpacker setup runs without the webpack-dev-server by default.  For this reason you should use the Procfile.dev 
+file in development.  This will run `webpack --watch` and the rails server so that as you update Webpack dependent javascript, 
+the server will pick up these new files.  
 
 ## Conventions
 

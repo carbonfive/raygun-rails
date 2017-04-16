@@ -36,4 +36,20 @@ module ApplicationHelper
     }.with_indifferent_access.fetch(alert_type, alert_type.to_s)
     "alert-#{alert_type}"
   end
+  def react_component(component_name, props={}, html_options = {}, render_order: 0)
+    react_class = 'react__' + component_name.underscore
+    base_options = {
+      class: react_class,
+      "data-react-component": component_name,
+      "data-render-order": render_order
+    }
+    options = props.reduce(base_options) do |memo, (key, value)|
+      value = JSON.generate(value) if [Hash, Array].include?(value.class)
+      memo.merge("data-#{key}".dasherize => value)
+    end
+    content_tag(:div, options.merge(html_options)) do
+      yield if block_given?
+    end
+  end
+
 end

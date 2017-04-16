@@ -20,6 +20,8 @@ gem "uglifier"
 
 gem "awesome_print"
 
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
 group :production, :acceptance do
   gem "rack-timeout"
 end

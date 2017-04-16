@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/rails/webpacker.git
+  revision: 017e8f3acbd5caa58f791a264cd18183272807f9
+  specs:
+    webpacker (2.0)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,6 +120,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -276,6 +286,7 @@ DEPENDENCIES
   spring-commands-rspec
   spring-watcher-listen
   uglifier
+  webpacker!
 
 RUBY VERSION
    ruby 2.4.1p111

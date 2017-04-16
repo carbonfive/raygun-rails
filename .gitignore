@@ -19,3 +19,5 @@
 
 # Ignore compiled assets.
 /public/assets
+/public/packs
+/node_modules

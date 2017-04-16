@@ -1,0 +1,51 @@
+{
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "coffee-loader": "^0.7.3",
+    "coffee-script": "^1.12.4",
+    "compression-webpack-plugin": "^0.3.2",
+    "glob": "^7.1.1",
+    "path-complete-extname": "^0.1.0",
+    "rails-erb-loader": "^3.2.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-airbnb": "^2.2.3",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "cheerio": "^0.22.0",
+    "enzyme": "^2.8.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "jest": "^19.0.2",
+    "prop-types": "^15.5.8",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.5.4",
+    "webpack-manifest-plugin": "^1.1.0"
+  },
+  "jest": {
+    "modulePaths": [
+      "node_modules",
+      "<rootDir>/app/javascript"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "testPathIgnorePatterns": [
+      "/vendor/bundle/",
+      "/node_modules/",
+      "/config/"
+    ]
+  }
+}
