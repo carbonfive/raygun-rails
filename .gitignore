@@ -15,6 +15,7 @@
 /log/*.log
 /tmp
 /spec/examples.txt
+/.rubocop-*
 
 # Ignore compiled assets.
 /public/assets

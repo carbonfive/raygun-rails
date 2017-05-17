@@ -45,6 +45,7 @@ group :development do
   gem 'launchy'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop', require: false
   # gem 'guard'
   # gem 'guard-rspec', '>= 4.6.5'                  # Resolves to 1.x without a version constraint. :/
   # gem 'guard-livereload'
