@@ -1,7 +1,7 @@
 module ApplicationHelper
   # create text with an icon to the left for bootstrap menus and buttons
   def text_with_icon(text, icon_name)
-    raw("#{icon(icon_name)} #{text}")
+    raw("#{icon(icon_name)} #{text}") # rubocop:disable Rails/OutputSafety
   end
 
   # generate a standard bootstrap glyphicon
