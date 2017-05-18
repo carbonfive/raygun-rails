@@ -5,3 +5,6 @@ AllCops:
   TargetRubyVersion: 2.4
   Exclude:
     - "lib/templates/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "log/**/*"
