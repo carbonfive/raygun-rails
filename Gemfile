@@ -1,50 +1,51 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Heroku uses the ruby version to configure your application's runtime.
-ruby '2.4.1'
+ruby "2.4.1"
 
-gem 'puma'
-gem 'rack-canonical-host'
-gem 'rails', '~> 5.1.1'
-gem 'listen'
-gem 'pg'
+gem "listen"
+gem "pg"
+gem "puma"
+gem "rack-canonical-host"
+gem "rails", "~> 5.1.1"
 
-gem 'slim-rails'
-gem 'sassc-rails'
-gem 'bootstrap-sass'
-gem 'jquery-rails'
-gem 'coffee-rails'
-gem 'simple_form'
-gem 'uglifier'
-gem 'autoprefixer-rails'
+gem "autoprefixer-rails"
+gem "bootstrap-sass"
+gem "coffee-rails"
+gem "jquery-rails"
+gem "sassc-rails"
+gem "simple_form"
+gem "slim-rails"
+gem "uglifier"
 
-gem 'awesome_print'
+gem "awesome_print"
 
 group :production, :acceptance do
-  gem 'rack-timeout'
+  gem "rack-timeout"
 end
 
 group :test do
-  gem 'capybara'
-  #gem 'capybara-email'
-  gem 'poltergeist'
-  gem 'database_cleaner'
-  gem 'simplecov'
+  gem "capybara"
+  # gem 'capybara-email'
+  gem "database_cleaner"
+  gem "poltergeist"
+  gem "simplecov"
 end
 
 group :test, :development do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem 'spring'
-  gem 'spring-watcher-listen'
-  gem 'spring-commands-rspec'
-  gem 'foreman'
-  gem 'launchy'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "foreman"
+  gem "launchy"
+  gem "rubocop", require: false
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "spring-watcher-listen"
   # gem 'guard'
   # gem 'guard-rspec', '>= 4.6.5'                  # Resolves to 1.x without a version constraint. :/
   # gem 'guard-livereload'
