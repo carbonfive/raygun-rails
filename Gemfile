@@ -35,6 +35,7 @@ end
 group :test, :development do
   gem "factory_girl_rails"
   gem "rspec-rails"
+  gem "rubocop", require: false
 end
 
 group :development do
@@ -42,7 +43,6 @@ group :development do
   gem "binding_of_caller"
   gem "foreman"
   gem "launchy"
-  gem "rubocop", require: false
   gem "spring"
   gem "spring-commands-rspec"
   gem "spring-watcher-listen"
