@@ -37,7 +37,7 @@ heroku maintenance:on --app $APP_NAME
 
 git push -f heroku $SHA_TO_DEPLOY:refs/heads/master
 
-heroku run rake db:migrate db:seed --app $APP_NAME
+heroku run -x --app $APP_NAME -- rake db:migrate db:seed
 
 heroku maintenance:off --app $APP_NAME
 
