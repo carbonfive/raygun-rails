@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Heroku uses the ruby version to configure your application's runtime.
-ruby "2.4.1"
+ruby "2.4.2"
 
 gem "listen"
 gem "pg"
