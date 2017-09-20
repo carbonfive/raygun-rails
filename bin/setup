@@ -27,6 +27,7 @@ chdir APP_ROOT do
   # end
 
   puts "\n== Preparing database =="
+  system! "bin/rails db:create:all"
   system! "bin/rails db:setup db:sample_data"
 
   puts "\n== Removing old logs and tempfiles =="
