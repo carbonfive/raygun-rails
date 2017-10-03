@@ -36,9 +36,8 @@ jobs:
       # Run rspec in parallel
       - type: shell
         command: |
-          bundle exec rspec --profile 10 \
+          bundle exec rspec --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            --format progress \
                             $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
       # Save artifacts
