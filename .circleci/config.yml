@@ -21,7 +21,7 @@ jobs:
         key: bundle-{{ arch }}-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: bundle install --path vendor/bundle --jobs=4
 
       # Store bundle cache
       - type: cache-save
