@@ -46,7 +46,7 @@ jobs:
         path: /tmp/test-results
 
       # Ensure sample_data executes
-      - run: bundle exec rake db:sample_data
+      - run: bundle exec rake db:seed db:sample_data
 
       # Rubocop
       - run: bundle exec rubocop
