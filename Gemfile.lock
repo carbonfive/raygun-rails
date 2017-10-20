@@ -78,10 +78,10 @@ GEM
     docile (1.1.5)
     erubi (1.6.1)
     execjs (2.7.0)
-    factory_girl (4.8.0)
+    factory_bot (1.0.1.alpha)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.8.0)
-      factory_girl (~> 4.8.0)
+    factory_bot_rails (1.0.0.alpha)
+      factory_bot (~> 1.0.0.alpha)
       railties (>= 3.0.0)
     ffi (1.9.18)
     foreman (0.84.0)
@@ -259,7 +259,7 @@ DEPENDENCIES
   capybara
   coffee-rails
   database_cleaner
-  factory_girl_rails
+  factory_bot_rails
   foreman
   jquery-rails
   launchy

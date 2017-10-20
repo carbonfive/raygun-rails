@@ -33,7 +33,7 @@ group :test do
 end
 
 group :test, :development do
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "rspec-rails"
   gem "rubocop", require: false
 end
