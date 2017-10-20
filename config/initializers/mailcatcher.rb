@@ -6,7 +6,7 @@ begin
   sock = TCPSocket.new("localhost", mailcatcher_port)
   sock.close
   mailcatcher = true
-rescue
+rescue StandardError
   mailcatcher = false
 end
 
