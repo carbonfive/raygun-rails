@@ -78,11 +78,14 @@ Guard is configured to run ruby specs, and also listen for livereload connection
 
 Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mailcatcher to the Gemfile.
 
-### Continuous Integration and Deployment with CircleCI
+### Continuous Integration with CircleCI
 
 This project is configured for continuous integration and deployment with CircleCI and Heroku.
 
-Check out [circle.yml](circle.yml) and [bin/deploy.sh](bin/deploy.sh) for details.
+Check out [circle.yml](circle.yml) for details on CircleCI.
+
+On successful builds, Heroku will trigger a deployment via its
+[GitHub Integration](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).
 
 # Server Environments
 
