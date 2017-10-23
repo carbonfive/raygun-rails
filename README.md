@@ -52,20 +52,7 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 
 ### Code Style
 
-Generally speaking, follow the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Additionally, these are
-other guidelines adopted by the team:
-
-**Always use double quotes for test/spec descriptions, unless the subject is a class/module.**
-
-```ruby
-describe SomeController do
-  context "when logged in as an admin" do
-    describe "#some_method" do
-      it "does some thing"
-    end
-  end
-end
-```
+Rubocop is configured to enforce the syleguide for this project.
 
 ## Additional/Optional Development Details
 
