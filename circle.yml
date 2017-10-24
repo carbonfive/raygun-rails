@@ -11,16 +11,3 @@ test:
   post:
     # Make sure seed and sample_data still run correctly, since they're easy to miss.
     - bundle exec rake db:seed db:sample_data
-
-deployment:
-  acceptance:
-    branch: development
-    commands:
-      - ./bin/deploy.sh app-prototype-acceptance:
-          timeout: 360
-
-  production:
-    branch: master
-    commands:
-      - ./bin/deploy.sh app-prototype:
-          timeout: 360
