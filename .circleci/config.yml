@@ -1,0 +1,58 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    working_directory: ~/app-prototype
+    docker:
+      - image: circleci/ruby:2.4.2-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
+          RAILS_ENV: test
+      - image: circleci/postgres:9.6.5-alpine
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: app_prototype_test
+          POSTGRES_PASSWORD: ""
+    steps:
+      - checkout
+
+      # Restore bundle cache, with fallbacks to increase the likeliness of a cache hit
+      - restore_cache:
+          keys:
+            - gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-{{ arch }}-{{ .Branch }}
+            - gem-cache
+
+      # Bundle install dependencies and remove any unused gems
+      - run: bundle install --path vendor/bundle --jobs=4 && bundle clean --force
+
+      # Store bundle cache
+      - save_cache:
+          key: gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
+      - run: bundle exec rake db:setup
+
+      # Rubocop compliance
+      - run: bundle exec rubocop
+
+      # Ensure sample_data runs without issues (note: data is loaded into the development database)
+      - run: bundle exec rake db:sample_data
+
+      # Run RSpec in parallel, when parallelism > 1
+      - run: |
+          bundle exec rspec --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Save test results, so the the timings can be used in future parallel runs
+      - store_test_results:
+          path: /tmp/test-results
+
+      # Save the test logs for debugging
+      - store_artifacts:
+          path: ./log/test.log
+          destination: test.log
