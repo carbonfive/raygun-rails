@@ -44,8 +44,8 @@ jobs:
       - type: store_test_results
         path: /tmp/test-results
 
-      # Ensure sample_data executes
+      # Ensure sample_data and seeds execute
       - run: bundle exec rake db:seed db:sample_data
 
-      # Rubocop
+      # Rubocop compliance
       - run: bundle exec rubocop
