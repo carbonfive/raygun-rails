@@ -34,6 +34,12 @@ jobs:
       # Database setup
       - run: bundle exec rake db:setup
 
+      # Rubocop compliance
+      - run: bundle exec rubocop
+
+      # Ensure sample_data and seeds execute
+      - run: bundle exec rake db:seed db:sample_data
+
       # Run rspec in parallel, when parallelism > 1
       - run: |
           bundle exec rspec --format RspecJunitFormatter \
@@ -43,9 +49,3 @@ jobs:
       # Save artifacts
       - type: store_test_results
         path: /tmp/test-results
-
-      # Ensure sample_data and seeds execute
-      - run: bundle exec rake db:seed db:sample_data
-
-      # Rubocop compliance
-      - run: bundle exec rubocop
