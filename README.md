@@ -46,13 +46,14 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 * Branch `master` is auto-deployed to production.
 * Create feature branches off of `development` using the naming convention
   `(features|chores|bugs)/a-brief-description-######`, where ###### is the tracker id.
-* Rebase your feature branch before merging into `development` to produce clean merge bubbles.
-* Always, retain merge commits when merging into `development` (e.g. `git merge --no-ff branchname`).
+* Rebase your feature branch before merging into `development` to produce clean/compact merge bubbles.
+* Always retain merge commits when merging into `development` (e.g. `git merge --no-ff branchname`).
+* Use `git merge development` (fast-forward, no merge commit) from `master`.
 * Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
 
 ### Code Style
 
-Rubocop is configured to enforce the syleguide for this project.
+Rubocop is configured to enforce the style guide for this project.
 
 ## Additional/Optional Development Details
 
@@ -78,11 +79,12 @@ Guard is configured to run ruby specs, and also listen for livereload connection
 
 Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mailcatcher to the Gemfile.
 
-### Continuous Integration and Deployment with CircleCI
+### Continuous Integration/Deployment with CircleCI and Heroku
 
-This project is configured for continuous integration and deployment with CircleCI and Heroku.
+This project is configured for continuous integration with CircleCI, see [circle.yml](circle.yml) for details.
 
-Check out [circle.yml](circle.yml) and [bin/deploy.sh](bin/deploy.sh) for details.
+On successful builds, Heroku will trigger a deployment via its
+[GitHub Integration](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).
 
 # Server Environments
 
@@ -115,4 +117,4 @@ Several common features and operational parameters can be set using environment 
 ### Third Party Services
 
 * Heroku for hosting.
-* CircleCI for continuous integration and deployment.
+* CircleCI for continuous integration.
