@@ -17,19 +17,21 @@ jobs:
     steps:
       - checkout
 
-      # Restore bundle cache
-      - type: cache-restore
-        key: bundle-{{ arch }}
+      # Restore bundle cache, with fallbacks to increase the likeliness of a cache hit
+      - restore_cache:
+          keys:
+            - gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-{{ arch }}-{{ .Branch }}
+            - gem-cache
 
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle --jobs=4
-      - run: bundle clean --force
+      # Bundle install dependencies and remove any unused gems
+      - run: bundle install --path vendor/bundle --jobs=4 && bundle clean --force
 
       # Store bundle cache
-      - type: cache-save
-        key: bundle-{{ arch }}
-        paths:
-          - vendor/bundle
+      - save_cache:
+          key: gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
       # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
       - run: bundle exec rake db:setup
