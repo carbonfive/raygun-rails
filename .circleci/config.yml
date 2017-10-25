@@ -18,14 +18,15 @@ jobs:
 
       # Restore bundle cache
       - type: cache-restore
-        key: bundle-{{ arch }}-{{ checksum "Gemfile.lock" }}
+        key: bundle-{{ arch }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle --jobs=4
+      - run: bundle clean --force
 
       # Store bundle cache
       - type: cache-save
-        key: bundle-{{ arch }}-{{ checksum "Gemfile.lock" }}
+        key: bundle-{{ arch }}
         paths:
           - vendor/bundle
 
