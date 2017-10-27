@@ -2,7 +2,7 @@
 cwd=`dirname "$0"`
 source "$cwd/reset-config.cfg"
 
-echo "Loading production data in development(destructive)..."
+echo "Loading production data in development (destructive)..."
 sleep 3
 
 DEVELOPMENT_DB="${DB_NAME}_development"
