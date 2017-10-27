@@ -62,7 +62,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    cliver (0.3.2)
+    capybara-selenium (0.0.6)
+      capybara
+      selenium-webdriver
+    childprocess (0.8.0)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -125,10 +129,6 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.21.0)
-    poltergeist (1.16.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     public_suffix (3.0.0)
     puma (3.10.0)
@@ -196,6 +196,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
+    rubyzip (1.2.1)
     sass (3.5.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -218,6 +219,9 @@ GEM
       sprockets (> 2.11)
       sprockets-rails
       tilt
+    selenium-webdriver (3.6.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
@@ -272,6 +276,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capybara
+  capybara-selenium
   coffee-rails
   database_cleaner
   dotenv-rails
@@ -281,7 +286,6 @@ DEPENDENCIES
   launchy
   listen
   pg
-  poltergeist
   puma
   rack-canonical-host
   rack-timeout
