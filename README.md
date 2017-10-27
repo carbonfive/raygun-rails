@@ -14,7 +14,7 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 * Ruby 2.4 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.x (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
-* Chromedriver for Capybara testing (`brew install chromesriver`). 
+* Chromedriver for Capybara testing (`brew install chromedriver`). 
 
 ### First Time Setup
 
