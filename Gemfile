@@ -29,7 +29,6 @@ group :test do
   gem "capybara"
   # gem "capybara-email"
   gem "capybara-selenium"
-  gem "database_cleaner"
   gem "simplecov"
 end
 
