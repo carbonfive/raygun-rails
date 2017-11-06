@@ -56,3 +56,7 @@ jobs:
       - store_artifacts:
           path: ./log/test.log
           destination: test.log
+
+      # Save screenshots for debugging
+      - store_artifacts:
+          path: tmp/screenshots
