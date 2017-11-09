@@ -19,6 +19,21 @@ module AppPrototype
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    config.generators do |g|
+      # Core Rails
+      # g.orm              :active_record, primary_key_type: :uuid
+      g.javascripts      false
+      g.stylesheets      false
+      g.helper           false
+
+      # Specs
+      g.factory_bot      true
+      g.routing_specs    false
+      g.view_specs       false
+      g.controller_specs false
+      g.request_specs    false
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
