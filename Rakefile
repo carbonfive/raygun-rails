@@ -4,3 +4,8 @@
 require File.expand_path("../config/application", __FILE__)
 
 AppPrototype::Application.load_tasks
+
+if Rails.env.development? || Rails.env.test?
+  Rake::Task[:default].clear_prerequisites
+  task default: %i[spec lint]
+end

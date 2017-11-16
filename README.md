@@ -53,7 +53,9 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 
 ### Code Style
 
-Rubocop is configured to enforce the style guide for this project.
+Rubocop and slim-lint are configured to enforce the style guide for this project. The default rake task will run all linters in addition to tests. You can also run linters explicitly:
+
+    $ ./bin/rake lint
 
 ## Additional/Optional Development Details
 

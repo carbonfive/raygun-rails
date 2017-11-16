@@ -31,6 +31,7 @@ group :test do
   gem "capybara-selenium"
   gem "database_cleaner"
   gem "simplecov"
+  gem "slim_lint"
 end
 
 group :test, :development do

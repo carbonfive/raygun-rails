@@ -36,8 +36,8 @@ jobs:
       # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
       - run: bundle exec rake db:setup
 
-      # Rubocop compliance
-      - run: bundle exec rubocop
+      # Linting
+      - run: bundle exec rake lint
 
       # Ensure sample_data runs without issues (note: data is loaded into the development database)
       - run: bundle exec rake db:sample_data
