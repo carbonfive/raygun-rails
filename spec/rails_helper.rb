@@ -44,12 +44,6 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  # Enable aggregate failures except for system tests or explicitly disabled at the spec level.
-  # See http://rspec.info/blog/2015/06/rspec-3-3-has-been-released/#expectations-new-aggregratefailures-api
-  config.define_derived_metadata do |meta|
-    meta[:aggregate_failures] = true unless meta.key?(:aggregate_failures) || meta[:type] == :system
-  end
-
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
