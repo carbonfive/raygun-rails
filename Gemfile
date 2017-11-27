@@ -44,7 +44,6 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "dotenv-rails"
-  gem "foreman"
   gem "launchy"
   gem "spring"
   gem "spring-commands-rspec"
