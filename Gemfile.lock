@@ -122,7 +122,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    parallel (1.12.1)
+    parallel (1.12.0)
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
