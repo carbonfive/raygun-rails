@@ -57,6 +57,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.3)
       debug_inspector (>= 0.0.1)
+    bootsnap (1.1.5)
+      msgpack (~> 1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -122,6 +124,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    msgpack (1.1.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -275,6 +278,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  bootsnap
   bootstrap-sass
   capybara
   capybara-selenium

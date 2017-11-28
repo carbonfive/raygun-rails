@@ -3,6 +3,7 @@ source "https://rubygems.org"
 # Heroku uses the ruby version to configure your application"s runtime.
 ruby "2.5.0"
 
+gem "bootsnap", require: false
 gem "listen"
 gem "pg"
 gem "puma"
