@@ -7,7 +7,7 @@ gem "listen"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.1.4"
+gem "rails", "~> 5.2.0.beta2"
 
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
