@@ -15,6 +15,7 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 * Ruby 2.4 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 9.6+ (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
 * Chromedriver 2.3+ for Capybara testing (`brew install chromedriver`).
+* Heroku CLI (`brew install heroku`).
 
 ### First Time Setup
 
@@ -35,7 +36,9 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 
 ### Running the Application Locally
 
-    $ foreman start
+The easiest way to run the app is using `heroku local`. This starts all the processes defined in `Procfile`, including the Rails server.
+
+    $ heroku local
     $ open http://localhost:3000
 
 ## Conventions
