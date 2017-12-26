@@ -4,7 +4,7 @@ jobs:
     parallelism: 1
     working_directory: ~/app-prototype
     docker:
-      - image: circleci/ruby:2.4.3-node-browsers
+      - image: circleci/ruby:2.5.0-node-browsers
         environment:
           PGHOST: 127.0.0.1
           PGUSER: postgres
