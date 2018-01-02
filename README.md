@@ -19,10 +19,16 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 ### First Time Setup
 
+#### `bin/setup`
+
 After cloning, run [./bin/setup](bin/setup) to install missing gems and prepare the database.
 
 Note, `rake db:sample_data` (run as part of setup) loads a small set of data for development. Check out
 [db/sample_data.rb](db/sample_data.rb) for details.
+
+#### `.env`
+
+The `bin/setup` script will create a `.env` file that defines settings for your local environment. Do not check this into source control. Refer to the [environment variables](#environment-variables) section below for what can be specified in `.env`.
 
 ### Running the Specs
 
