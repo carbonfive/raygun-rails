@@ -3,11 +3,12 @@ source "https://rubygems.org"
 # Heroku uses the ruby version to configure your application"s runtime.
 ruby "2.5.0"
 
+gem "bootsnap", require: false
 gem "listen"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.1.4"
+gem "rails", "~> 5.2.0.rc1"
 
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
