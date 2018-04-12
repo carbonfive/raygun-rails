@@ -1,5 +1,4 @@
-# PostgreSQL. Versions 8.2 and up are supported.
-# Use 'createuser -s postgres' to create a general purpose db (super)user.
+# PostgreSQL: versions 9.1 and up are supported.
 
 default: &default
   adapter: postgresql
@@ -10,7 +9,6 @@ default: &default
 development:
   <<: *default
   database: app_prototype_development
-  username: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
