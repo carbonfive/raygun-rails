@@ -13,7 +13,7 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 2.5 (see [.ruby-version](.ruby-version)).
-* PostgreSQL 9.6+ (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
+* PostgreSQL 10.3+ (`brew install postgresql`) with superuser 'postgres' with no password (`createuser -s postgres`).
 * Chromedriver 2.3+ for Capybara testing (`brew install chromedriver`).
 * Heroku CLI (`brew install heroku`).
 
