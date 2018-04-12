@@ -1,25 +1,28 @@
 # PostgreSQL. Versions 8.2 and up are supported.
 # Use 'createuser -s postgres' to create a general purpose db (super)user.
 
-development: &default
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: app_prototype_development
-  username: postgres
-  pool: <%= ENV['DB_POOL'].presence || ENV['PUMA_THREADS'].presence || 5 %>
+  pool: <%= ENV["DB_POOL"].presence || ENV["RAILS_MAX_THREADS"].presence || 5 %>
   timeout: 5000
 
-# Don't use the erb specified pool setting here so CircleCI doesn't fall over
+development:
+  <<: *default
+  database: app_prototype_development
+  username: postgres
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: app_prototype_test
-  min_messages: warning
-  pool: 5
 
 acceptance:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
