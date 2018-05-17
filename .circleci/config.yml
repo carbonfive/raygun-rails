@@ -33,6 +33,9 @@ jobs:
           paths:
             - vendor/bundle
 
+      # Using structure.sql? Install postgresql-client for loading structure.
+      #- run: sudo apt-get install postgresql-client
+
       # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
       - run: bundle exec rake db:setup
 
