@@ -33,14 +33,14 @@ jobs:
           paths:
             - vendor/bundle
 
+      # Rubocop compliance
+      - run: bundle exec rubocop
+
       # Using structure.sql? Install postgresql-client for loading structure.
       #- run: sudo apt-get install postgresql-client
 
       # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
       - run: bundle exec rake db:setup
-
-      # Rubocop compliance
-      - run: bundle exec rubocop
 
       # Ensure sample_data runs without issues (note: data is loaded into the development database)
       - run: bundle exec rake db:sample_data
