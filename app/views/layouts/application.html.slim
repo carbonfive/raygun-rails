@@ -2,16 +2,16 @@ doctype 5
 html
   head
     title App Prototype
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tag
-    meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 
   body id=(controller.controller_name) class=(controller.action_name)
     header
       nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
         .container
-          a.navbar-brand href='/' App Prototype
+          a.navbar-brand href="/" App Prototype
           button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
             span.navbar-toggler-icon
 
@@ -25,16 +25,16 @@ html
               /     .dropdown-menu aria-labelledby="dropdown"
               /       a.dropdown-item
               /         | Sign Out
-              /         / = link_to text_with_icon('Sign Out', 'log-out'), sign_out_path, class: 'nav-link'
+              /         / = link_to text_with_icon("Sign Out", "log-out"), sign_out_path, class: "nav-link"
               / - else
               /   a.nav-link href="#" Sign In
-              /   /= link_to text_with_icon('Sign In', 'log-in'), sign_in_path, class: 'nav-link'
+              /   /= link_to text_with_icon("Sign In", "log-in"), sign_in_path, class: "nav-link"
 
 
-    main.container role='main'
+    main.container role="main"
       - flash.each do |name, msg|
         .alert.alert-dismissable class=alert_class(name)
-          button.close type='button' data-dismiss='alert' aria-hidden='true' &times;
+          button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
           = raw(msg)
       = yield
 
