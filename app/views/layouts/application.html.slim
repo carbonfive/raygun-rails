@@ -23,12 +23,9 @@ html
               /       = current_user.email
               /
               /     .dropdown-menu aria-labelledby="dropdown"
-              /       a.dropdown-item
-              /         | Sign Out
-              /         / = link_to text_with_icon("Sign Out", "log-out"), sign_out_path, class: "nav-link"
+              /       a.dropdown-item href="/" Sign Out
               / - else
-              /   a.nav-link href="#" Sign In
-              /   /= link_to text_with_icon("Sign In", "log-in"), sign_in_path, class: "nav-link"
+              /   a.nav-link href="/" Sign In
 
 
     main.container role="main"
