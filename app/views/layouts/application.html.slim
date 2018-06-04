@@ -30,8 +30,9 @@ html
 
     main.container role="main"
       - flash.each do |name, msg|
-        .alert.alert-dismissable class=alert_class(name)
-          button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
+        .alert.alert-dismissable class=alert_class(name) role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true" &times;
           = raw(msg)
       = yield
 
