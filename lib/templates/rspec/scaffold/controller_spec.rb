@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 <% module_namespacing do -%>
 describe <%= controller_class_name %>Controller, <%= type_metatag(:controller) %> do
