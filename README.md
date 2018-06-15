@@ -90,7 +90,7 @@ Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mai
 
 ### Continuous Integration/Deployment with CircleCI and Heroku
 
-This project is configured for continuous integration with CircleCI, see [circle.yml](circle.yml) for details.
+This project is configured for continuous integration with CircleCI, see [.circleci/config.yml](.circleci/config.yml) for details.
 
 On successful builds, Heroku will trigger a deployment via its
 [GitHub Integration](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).
