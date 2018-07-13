@@ -13,7 +13,7 @@ gem "rails", "~> 5.2.0"
 
 # Front-endy
 gem "autoprefixer-rails"
-gem "bootstrap-sass"
+gem "bootstrap", "~> 4.1.1"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "sass-rails", require: false # Only needed for generator (e.g. rail g controller Users)

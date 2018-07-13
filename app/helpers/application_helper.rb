@@ -1,14 +1,4 @@
 module ApplicationHelper
-  # create text with an icon to the left for bootstrap menus and buttons
-  def text_with_icon(text, icon_name)
-    raw("#{icon(icon_name)} #{text}") # rubocop:disable Rails/OutputSafety
-  end
-
-  # generate a standard bootstrap glyphicon
-  def icon(name)
-    content_tag(:span, nil, class: "glyphicon glyphicon-#{name}")
-  end
-
   # action name to use for the primary submit button on scaffold-created CRUD forms
   def btn_action_prefix
     case action_name
@@ -16,16 +6,6 @@ module ApplicationHelper
         "Create"
       when "edit", "update"
         "Update"
-    end
-  end
-
-  # bootstrap icon name to use for the primary submit button on scaffold-created forms
-  def action_icon_name
-    case action_name
-      when "new", "create"
-        "plus"
-      when "edit", "update"
-        "edit"
     end
   end
 

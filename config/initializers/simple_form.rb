@@ -1,12 +1,21 @@
+#
+# Uncomment this and change the path if necessary to include your own
+# components.
+# See https://github.com/plataformatec/simple_form#custom-components to know
+# more about custom components.
+# Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
+#
 # Use this setup block to configure all options available in SimpleForm.
+#
+# rubocop:disable Metrics/LineLength
+
 SimpleForm.setup do |config|
   # Wrappers are used by the form builder to generate a
   # complete input. You can remove any component from the
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-  config.wrappers :default, class: :input,
-                            hint_class: :field_with_hint, error_class: :field_with_errors do |b|
+  config.wrappers :default, class: :input, hint_class: :field_with_hint, error_class: :field_with_errors, valid_class: :field_without_errors do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -28,7 +37,11 @@ SimpleForm.setup do |config|
     # extensions by default, you can change `b.optional` to `b.use`.
 
     # Calculates maxlength from length validations for string inputs
+    # and/or database column lengths
     b.optional :maxlength
+
+    # Calculate minlength from length validations for string inputs
+    b.optional :minlength
 
     # Calculates pattern from format validations for string inputs
     b.optional :pattern
@@ -40,6 +53,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     ## Inputs
+    # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :label_input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
@@ -98,7 +112,6 @@ SimpleForm.setup do |config|
 
   # How the label text should be generated altogether with the required text.
   # config.label_text = lambda { |label, required, explicit_label| "#{required} #{label}" }
-  config.label_text = ->(label, _required, _explicit_label) { label.to_s }
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil
@@ -121,7 +134,7 @@ SimpleForm.setup do |config|
   config.browser_validations = false
 
   # Collection of methods to detect if a file type was given.
-  # config.file_methods = [ :mounted_as, :file?, :public_filename ]
+  # config.file_methods = [ :mounted_as, :file?, :public_filename, :attached? ]
 
   # Custom mappings for input types. This should be a hash containing a regexp
   # to match as key, and the input type that will be used when the field name
@@ -163,4 +176,10 @@ SimpleForm.setup do |config|
 
   # Defines which i18n scope will be used in Simple Form.
   # config.i18n_scope = 'simple_form'
+
+  # Defines validation classes to the input_field. By default it's nil.
+  # config.input_field_valid_class = 'is-valid'
+  # config.input_field_error_class = 'is-invalid'
 end
+
+# rubocop:enable Metrics/LineLength
