@@ -14,7 +14,6 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 * Ruby 2.5 (see [.ruby-version](.ruby-version)).
 * PostgreSQL 10.3+ (`brew install postgresql`).
-* Chromedriver 2.3+ for Capybara testing (`brew install chromedriver`).
 * Heroku CLI (`brew install heroku`).
 
 ### First Time Setup
@@ -87,6 +86,26 @@ Guard is configured to run ruby specs, and also listen for livereload connection
     $ open http://localhost:1080/
 
 Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mailcatcher to the Gemfile.
+
+### Using ChromeDriver 
+
+The ChromeDriver version used in this project is maintained by the [chromedriver-helper](https://github.com/flavorjones/chromedriver-helper) gem.  This is means that the
+feature specs are not running against the ChromeDriver installed previously on the machine, such as by Homebrew.
+
+If you encounter issues related to the chromedriver version, e.g
+
+
+    Selenium::WebDriver::Error::UnknownError:
+      unknown error: call function result missing 'value'
+        (Session info: headless chrome=69.0.3497.100)
+        (Driver info: chromedriver=2.34.522932 (4140ab217e1ca1bec0c4b4d1b148f3361eb3a03e),platform=Mac OS X 10.13.6 x86_64)
+
+
+you can update to the latest with executables from `chromedriver-helper`:
+
+    $ chromedriver-update  # defaults to latest version of Chromedriver
+
+refer to documentation for setting specific versions.
 
 ### Continuous Integration/Deployment with CircleCI and Heroku
 
