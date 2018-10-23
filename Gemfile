@@ -9,11 +9,11 @@ gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.2.0"
+gem "rails", "~> 5.2.1"
 
 # Front-endy
 gem "autoprefixer-rails"
-gem "bootstrap", "~> 4.1.1"
+gem "bootstrap", "~> 4.1.3"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "sass-rails", require: false # Only needed for generator (e.g. rail g controller Users)
