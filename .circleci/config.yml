@@ -87,4 +87,9 @@ workflows:
   build_and_audit:
     jobs:
       - build
-      - audit
+      - audit:
+          filters:
+            branches:
+              only:
+                - development
+                - master
