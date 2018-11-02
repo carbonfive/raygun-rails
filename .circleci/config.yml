@@ -1,5 +1,17 @@
 version: 2
 jobs:
+  audit:
+    working_directory: ~/app-prototype
+    docker:
+      - image: circleci/ruby:2.5.3
+    steps:
+      - checkout
+      - run:
+          name: Install bundler-audit
+          command: gem install bundler-audit
+      - run:
+          name: Check for vulnerable gem versions
+          command: bundle-audit check --update
   build:
     parallelism: 1
     working_directory: ~/app-prototype
@@ -69,3 +81,10 @@ jobs:
       # Save screenshots for debugging
       - store_artifacts:
           path: ./tmp/screenshots
+
+workflows:
+  version: 2
+  build_and_audit:
+    jobs:
+      - build
+      - audit
