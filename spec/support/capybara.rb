@@ -1,5 +1,9 @@
 require "selenium/webdriver"
 
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new app, browser: :chrome
+end
+
 Capybara.register_driver :headless_chrome do |app|
   options = { "args" => %w[headless window-size=1024,3840] }
 
@@ -26,8 +30,10 @@ Capybara.register_driver :headless_chrome do |app|
   )
 end
 
+chrome_driver = ENV["HEADLESS"] == "false" ? :chrome : :headless_chrome
+
 Capybara.default_driver    = :rack_test
-Capybara.javascript_driver = :headless_chrome
+Capybara.javascript_driver = chrome_driver
 
 RSpec.configure do |config|
   config.before(:each, type: :system) do
@@ -35,6 +41,6 @@ RSpec.configure do |config|
   end
 
   config.before(:each, type: :system, js: true) do
-    driven_by(:headless_chrome)
+    driven_by(chrome_driver)
   end
 end

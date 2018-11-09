@@ -87,7 +87,7 @@ Guard is configured to run ruby specs, and also listen for livereload connection
 
 Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mailcatcher to the Gemfile.
 
-### Using ChromeDriver 
+### Using ChromeDriver
 
 The ChromeDriver version used in this project is maintained by the [chromedriver-helper](https://github.com/flavorjones/chromedriver-helper) gem.  This is means that the
 feature specs are not running against the ChromeDriver installed previously on the machine, such as by Homebrew.
@@ -106,6 +106,14 @@ you can update to the latest with executables from `chromedriver-helper`:
     $ chromedriver-update  # defaults to latest version of Chromedriver
 
 refer to documentation for setting specific versions.
+
+### Headed vs headless Chrome
+
+System specs marked with `js: true` run using headless Chrome by default, in the interest of speed. When writing or troubleshooting specs, you may want to run the normal (i.e. "headed") version of Chrome so you can see what is being rendered and use the Chrome developer tools.
+
+To do so, specify `HEADLESS=false` in your environment when running the specs. For example:
+
+    $ HEADLESS=false bin/rspec spec/system
 
 ### Continuous Integration/Deployment with CircleCI and Heroku
 
@@ -134,7 +142,7 @@ Several common features and operational parameters can be set using environment 
 * `FORCE_SSL` - Require all requests to come over a secure connection (default: false).
 * `BASIC_AUTH_PASSWORD` - Enable basic auth with this password.
 * `BASIC_AUTH_USER` - Set a basic auth username (not required, password enables basic auth).
-* `RACK_TIMEOUT_SERVICE_TIMEOUT` - Terminate requests that take longer than this time (default: 15s). 
+* `RACK_TIMEOUT_SERVICE_TIMEOUT` - Terminate requests that take longer than this time (default: 15s).
 * `ASSET_HOST` - Asset host for static assets (e.g. CDN) (default: none).
 * `PORT` - Port to listen on (default: 3000).
 * `WEB_CONCURRENCY` - Number of puma workers to spawn (default: 1).
