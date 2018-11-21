@@ -6,6 +6,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.3-node-browsers
         environment:
+          BUNDLE_JOBS: 4
+          BUNDLE_PATH: vendor/bundle
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
@@ -22,16 +24,20 @@ jobs:
           keys:
             - gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
             - gem-cache-{{ arch }}-{{ .Branch }}
-            - gem-cache
+            - gem-cache-{{ arch }}-
 
       # Bundle install dependencies and remove any unused gems
-      - run: bundle install --path ./vendor/bundle --jobs=4 && bundle clean --force
+      - run:
+          name: bundle install
+          command: |
+            bundle check || bundle install
+            bundle clean
 
       # Store bundle cache
       - save_cache:
           key: gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
-            - ./vendor/bundle
+            - vendor/bundle
 
       # Rubocop compliance
       - run: bundle exec rubocop
