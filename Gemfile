@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Heroku uses the ruby version to configure your application"s runtime.
-ruby "2.6.0"
+ruby "2.6.1"
 
 # Back-endy
 gem "bootsnap", require: false
