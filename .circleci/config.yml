@@ -11,7 +11,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
-      - image: circleci/postgres:10.4-alpine
+      - image: circleci/postgres:11.2-alpine
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: app_prototype_test
