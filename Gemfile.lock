@@ -76,13 +76,6 @@ GEM
     childprocess (1.0.1)
       rake (< 13.0)
     coderay (1.1.2)
-    coffee-rails (5.0.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
@@ -290,7 +283,6 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 4.3.1)
   capybara
-  coffee-rails
   dotenv-rails
   factory_bot_rails
   jquery-rails
