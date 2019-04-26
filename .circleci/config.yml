@@ -4,7 +4,7 @@ jobs:
     parallelism: 1
     working_directory: ~/app-prototype
     docker:
-      - image: circleci/ruby:2.6.2-node-browsers
+      - image: circleci/ruby:2.6.3-node-browsers
         environment:
           BUNDLE_JOBS: 4
           BUNDLE_PATH: vendor/bundle
