@@ -9,13 +9,12 @@ gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 5.2.3"
+gem "rails", "~> 6.0.0.rc1"
 
 # Front-endy
 gem "autoprefixer-rails"
 gem "bootstrap", "~> 4.3.1"
 gem "jquery-rails"
-gem "sass-rails", require: false # Only needed for generator (e.g. rail g controller Users)
 gem "sassc-rails"
 gem "simple_form"
 gem "slim-rails"
@@ -32,7 +31,7 @@ end
 
 group :development, :test do
   gem "factory_bot_rails"
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 4.0.0.beta2" # For Rails 6 support.
   gem "rspec_junit_formatter"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
