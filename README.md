@@ -132,6 +132,7 @@ Several common features and operational parameters can be set using environment 
 * `PORT` - Port to listen on (default: 3000).
 * `WEB_CONCURRENCY` - Number of puma workers to spawn (default: 1).
 * `RAILS_MAX_THREADS` - Threads per worker (default: 5).
+* `RAILS_MIN_THREADS` - Threads per worker (default: 5).
 * `DB_POOL` - Number of DB connections per pool (i.e. per worker) (default: RAILS_MAX_THREADS or 5).
 * `RAILS_LOG_TO_STDOUT` - Log to standard out, good for Heroku (default: false).
 * `RAILS_SERVE_STATIC_FILES` - Serve static assets, good for Heroku (default: false).
