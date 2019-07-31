@@ -1,5 +1,9 @@
 inherit_from:
   - https://raw.githubusercontent.com/carbonfive/c5-conventions/master/rubocop/rubocop.yml
 
+require:
+  - rubocop-performance
+  - rubocop-rails
+
 Rails:
   Enabled: true
