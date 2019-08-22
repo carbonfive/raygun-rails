@@ -19,6 +19,7 @@ gem "sassc-rails"
 gem "simple_form"
 gem "slim-rails"
 gem "uglifier"
+gem "webpacker"
 
 # Tools
 gem "awesome_print"
