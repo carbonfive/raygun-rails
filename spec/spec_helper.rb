@@ -60,8 +60,12 @@ RSpec.configure do |config|
   # with RSpec, but feel free to customize to your heart's content.
 
   # Enable aggregate failures unless it's a feature spec or explcitly configured at the spec level.
-  config.define_derived_metadata do |meta|
-    meta[:aggregate_failures] = (meta[:type] != :feature) unless meta.key?(:aggregate_failures)
+  config.define_derived_metadata(type: proc { |type| type != :system }) do |meta|
+    meta[:aggregate_failures] = true
+  end
+
+  config.define_derived_metadata(type: :system) do |meta|
+    meta[:aggregate_failures] = false unless meta.key?(:aggregate_failures)
   end
 
   # These two settings work together to allow you to limit a spec run
