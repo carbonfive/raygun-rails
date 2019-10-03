@@ -1,7 +1,11 @@
 javascript:
   /* This little bit of silliness is here to ensure our js feature specs are working. Remove at will. */
-  $(document).ready(function() {
-    $(".jumbotron p:last").after("<p>Enjoy!</p>")
+  window.addEventListener('load', function () {
+    var enjoy = document.createElement("p");
+    enjoy.append("Enjoy!");
+
+    document.querySelector(".jumbotron p:last-child")
+      .appendChild(enjoy);
   });
 
 .jumbotron
