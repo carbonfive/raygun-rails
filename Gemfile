@@ -14,7 +14,6 @@ gem "rails", "~> 6.0.0"
 # Front-endy
 gem "autoprefixer-rails"
 gem "bootstrap", "~> 4.3.1"
-gem "jquery-rails"
 gem "sassc-rails"
 gem "simple_form"
 gem "slim-rails"
