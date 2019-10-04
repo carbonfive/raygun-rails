@@ -59,7 +59,7 @@ RSpec.configure do |config|
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
 
-  # Enable aggregate failures unless it's a feature spec or explcitly configured at the spec level.
+  # Enable aggregate failures unless it's a system spec or explicitly configured at the spec level.
   config.define_derived_metadata(type: proc { |type| type != :system }) do |meta|
     meta[:aggregate_failures] = true
   end
