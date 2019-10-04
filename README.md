@@ -46,6 +46,14 @@ The easiest way to run the app is using `heroku local`. This starts all the proc
     $ heroku local
     $ open http://localhost:3000
 
+### Webpack Dev Server
+
+By default, webpacker will compile assets on demand. In other words, you don’t need to precompile all assets ahead of time — webpacker lazily compiles assets it has not served yet. However, you will need to manually reload your browser to see new changes when you edit an asset.
+
+Alternatively, for live code reloading, you can run `./bin/webpack-dev-server` in a separate terminal from `rails s`. Asset requests are proxied to the dev server, and it will automatically refresh your browser when it detects changes to the pack.
+
+When you stop the dev server, Rails automatically reverts back to on-demand compilation.
+
 ## Conventions
 
 ### Git
