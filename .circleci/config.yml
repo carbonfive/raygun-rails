@@ -40,6 +40,18 @@ jobs:
           paths:
             - vendor/bundle
 
+      # Yarn cache
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ arch }}-{{ .Branch }}
+            - yarn-cache-{{ arch }}-
+      - run: yarn install
+      - save_cache:
+          key: yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+
       # Rubocop compliance
       - run: bundle exec rubocop
 
