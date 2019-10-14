@@ -1,0 +1,1 @@
+This app does not use the Rails asset pipeline; it uses webpacker instead. Place images and styles under `app/javascript/` and then require them from one of the webpack entry points in `app/javascript/packs/`. To re-enable the asset pipeline, revert these changes: [#267](https://github.com/carbonfive/raygun-rails/pull/267).
