@@ -1,0 +1,25 @@
+$footer-height: 40px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $footer-height;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  line-height: $footer-height - 1px;
+  border-top: 1px solid $gray-200;
+
+  p {
+    margin: 0;
+    color: $gray-700;
+  }
+}
