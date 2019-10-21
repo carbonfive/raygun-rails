@@ -1,8 +1,6 @@
-version: 2
-jobs:
-  build:
-    parallelism: 1
-    working_directory: ~/app-prototype
+version: 2.1
+executors:
+  rails:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
@@ -16,75 +14,112 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_DB: app_prototype_test
           POSTGRES_PASSWORD: ""
-    steps:
-      - checkout
 
-      # Restore bundle cache, with fallbacks to increase the likeliness of a cache hit
+commands:
+  bundle-install:
+    description: Install Ruby gems
+    steps:
       - restore_cache:
-          keys:
+          keys: # Include fallbacks to increase the likeliness of a cache hit
             - gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
             - gem-cache-{{ arch }}-{{ .Branch }}
             - gem-cache-{{ arch }}-
-
-      # Bundle install dependencies and remove any unused gems
       - run:
-          name: bundle install
+          name: Install gems and remove unused gems
           command: |
             gem install bundler
             bundle check || bundle install
-            bundle clean
-
-      # Store bundle cache
+            bundle clean --force
       - save_cache:
           key: gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-
-      # Yarn cache
+  yarn-install:
+    description: Install JavaScript dependencies
+    steps:
       - restore_cache:
-          keys:
+          name: Restore Yarn cache
+          keys: # Include fallbacks to increase the likeliness of a cache hit
             - yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
             - yarn-cache-{{ arch }}-{{ .Branch }}
             - yarn-cache-{{ arch }}-
-      - run: yarn install
+      - run:
+          name: Install JS dependencies
+          command: yarn install --cache-folder .yarn-cache
       - save_cache:
           key: yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
-            - ./node_modules
-
-      # Rubocop compliance
-      - run: bundle exec rubocop
-
+            - .yarn-cache
+  db-setup:
+    description: Set up database
+    steps:
       # Using structure.sql? Install postgresql-client for loading structure.
       #- run: sudo apt-get install postgresql-client
-
-      # Database setup (note: db:setup creates development and test dbs, applies seeds to development)
-      - run: bundle exec rake db:setup
-
+      - run:
+          name: Set up database
+          command: bundle exec rake db:setup
       # Ensure sample_data runs without issues (note: data is loaded into the development database)
-      - run: bundle exec rake db:sample_data
+      - run:
+          name: Seed with sample data
+          command: bundle exec rake db:sample_data
+  rspec:
+    description: Run RSpec tests
+    steps:
+      - run:
+          name: Run RSpec tests in parallel
+          command: |
+            circleci tests glob "spec/**/*_spec.rb" > /tmp/rspec_files
 
-      # Run RSpec in parallel, when parallelism > 1
-      - run: |
-          circleci tests glob "spec/**/*_spec.rb" > /tmp/rspec_files
+            TEST_FILES=$(circleci tests split --split-by=timings --timings-type=filename < /tmp/rspec_files)
 
-          TEST_FILES=$(circleci tests split --split-by=timings --timings-type=filename < /tmp/rspec_files)
+            echo -e "Testing" $(echo $TEST_FILES | wc -w) "of" $(cat /tmp/rspec_files | wc -w) "files on this container.\n"
 
-          echo -e "Testing" $(echo $TEST_FILES | wc -w) "of" $(cat /tmp/rspec_files | wc -w) "files on this container.\n"
-
-          bundle exec rspec --format RspecJunitFormatter \
-                            --out ./test-results/rspec/results.xml -- \
-                            $TEST_FILES
-
+            bundle exec rspec --format progress \
+                              --format RspecJunitFormatter \
+                              --out ./test-results/rspec/results.xml -- \
+                              $TEST_FILES
       # Save test results, so the the timings can be used in future parallel runs
       - store_test_results:
           path: ./test-results
-
       # Save the test logs for debugging
       - store_artifacts:
           path: ./log/test.log
           destination: test.log
-
       # Save screenshots for debugging
       - store_artifacts:
           path: ./tmp/screenshots
+
+jobs:
+  install_dependencies:
+    executor: rails
+    steps:
+      - checkout
+      - bundle-install
+      - yarn-install
+  static_analysis:
+    executor: rails
+    steps:
+      - checkout
+      - bundle-install
+      - yarn-install
+      # Rubocop compliance
+      - run: bundle exec rubocop
+  rspec:
+    executor: rails
+    steps:
+      - checkout
+      - bundle-install
+      - yarn-install
+      - rspec
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - install_dependencies
+      - static_analysis:
+          requires:
+            - install_dependencies
+      - rspec:
+          requires:
+            - install_dependencies
