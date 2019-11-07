@@ -9,7 +9,7 @@ gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 6.0.0"
+gem "rails", "~> 6.0.1"
 
 # Front-endy
 gem "simple_form"
