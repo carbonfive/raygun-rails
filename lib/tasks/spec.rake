@@ -10,7 +10,7 @@ begin
   end
 rescue LoadError
   namespace :spec do
-    task :without_system do
+    task without_system: :environment do
     end
   end
 end

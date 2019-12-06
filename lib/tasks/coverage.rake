@@ -1,5 +1,5 @@
 namespace :spec do
-  task :enable_coverage do
+  task enable_coverage: :environment do
     ENV["COVERAGE"] = "1"
   end
 
