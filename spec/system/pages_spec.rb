@@ -9,9 +9,9 @@ describe "Static Pages" do
   end
 
   # Another contrived example, this one relies on the javascript driver.
-  it "/ should include the warm closing text 'Enjoy!'", js: true do
+  it "/ should include a button with the CTA message 'And away we go!'", js: true do
     visit root_path
 
-    expect(page).to have_content "Enjoy!"
+    expect(page).to have_css("button", text: "And away we go!")
   end
 end

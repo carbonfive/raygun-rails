@@ -1,5 +1,18 @@
-.btn-xs {
-  padding: 0.225rem 0.4125rem;
-  font-size: 0.775rem;
-  line-height: 1.25;
+$border-radius: 4px;
+$button-padding: 15px;
+$background-color: #fff;
+$border-color: #ccc;
+$color: #666;
+
+.btn {
+  color: $color;
+  outline:0;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  transition: background-color 0.3s ease;
+  padding: $button-padding;
+  &:hover {
+    background-color: darken($background-color, 10);
+  }
 }
