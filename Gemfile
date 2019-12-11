@@ -52,6 +52,7 @@ group :test do
   gem "capybara"
   # gem "capybara-email"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
   gem "simplecov"
   gem "webdrivers"
 end
