@@ -1,8 +1,10 @@
+@import "_colors";
+
 $border-radius: 4px;
 $button-padding: 15px;
-$background-color: #fff;
-$border-color: #ccc;
-$color: #666;
+$background-color: $white;
+$border-color: $gray-cc;
+$color: $gray-40;
 
 .btn {
   color: $color;

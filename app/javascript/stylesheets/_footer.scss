@@ -1,4 +1,5 @@
 @import "_variables";
+@import "_colors";
 
 .footer {
   position: absolute;
@@ -6,10 +7,10 @@
   width: 100%;
   height: $footer-height;
   line-height: 1;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $gray-cc;
 
   p {
     margin: 0;
-    color: #999;
+    color: $gray-99;
   }
 }
