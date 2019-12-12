@@ -5,7 +5,7 @@
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
+    "@rails/ujs": "^6.0.1",
     "@rails/webpacker": "^4.2.2",
     "bootstrap": "^4.3.1",
     "core-js": "^3.2.1",
