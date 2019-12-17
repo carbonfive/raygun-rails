@@ -10,11 +10,11 @@ html
   body id=(controller.controller_name) class=(controller.action_name)
     header.header
       .container
-        a.header__home href="/" App Prototype
+        a href="/" App Prototype
 
     main.container role="main"
       - flash.each do |name, msg|
-        .alert.alert-dismissable class=alert_class(name) role="alert"
+        .alert role="alert"
           = raw(msg)
       = yield
 
