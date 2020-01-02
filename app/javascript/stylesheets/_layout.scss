@@ -1,0 +1,17 @@
+@import "_variables";
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: $font-family;
+  font-size: 100%;
+}
+
+body {
+  margin: 0 0 $footer-height;
+}
+
+.container {
+  position: relative;
+  padding: 10px;
+}

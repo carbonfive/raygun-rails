@@ -8,31 +8,13 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 
   body id=(controller.controller_name) class=(controller.action_name)
-    header
-      nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-        .container
-          a.navbar-brand href="/" App Prototype
-          button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-            span.navbar-toggler-icon
-
-          #navbarSupportedContent.collapse.navbar-collapse
-            ul.navbar-nav.ml-auto
-              / - if current_user
-              /   li.nav-item.dropdown
-              /     a#dropdown.nav-link.dropdown-toggle data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-              /       = current_user.email
-              /
-              /     .dropdown-menu aria-labelledby="dropdown"
-              /       a.dropdown-item href="/" Sign Out
-              / - else
-              /   a.nav-link href="/" Sign In
-
+    header.header
+      .container
+        a href="/" App Prototype
 
     main.container role="main"
       - flash.each do |name, msg|
-        .alert.alert-dismissable class=alert_class(name) role="alert"
-          button.close type="button" data-dismiss="alert" aria-label="Close"
-            span aria-hidden="true" &times;
+        .alert role="alert"
           = raw(msg)
       = yield
 

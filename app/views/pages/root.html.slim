@@ -1,17 +1,19 @@
 javascript:
   /* This little bit of silliness is here to ensure our js feature specs are working. Remove at will. */
   window.addEventListener('load', function () {
-    var enjoy = document.createElement("p");
-    enjoy.append("Enjoy!");
+    var enjoy = document.createElement("button");
+    enjoy.classList.add("btn")
+    enjoy.append("And away we go!");
 
-    document.querySelector(".jumbotron p:last-child")
+    document.querySelector(".hero p:last-child")
       .appendChild(enjoy);
   });
 
-.jumbotron
+.hero
   h1 Hello, world!
   br
   p Welcome to your newly generated rails application...
   p Meander around the code to see what's been done for you. Many small, and a few not-so-small, customizations have been made.
   p Custom generator templates create views that are bootstrap compatible and specs that are factory-aware and follow best practices.
   p Your application is ready for easy deployment to heroku.
+  p
