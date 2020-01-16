@@ -7,7 +7,7 @@
     "@rails/activestorage": "^6.0.2",
     "@rails/ujs": "^6.0.2",
     "@rails/webpacker": "^4.2.2",
-    "core-js": "^3.6.2",
+    "core-js": "^3.6.4",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
