@@ -11,6 +11,6 @@
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.10.1"
   }
 }
