@@ -131,7 +131,7 @@ Several common features and operational parameters can be set using environment 
 
 **Optional**
 
-* `HOSTNAME` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
+* `CANONICAL_HOSTNAME` - Canonical hostname for this application. Other incoming requests will be redirected to this hostname.
   Also used by mailers to generate full URLs.
 * `FORCE_SSL` - Require SSL for all requests, redirecting if necessary (default: false).
 * `BASIC_AUTH_PASSWORD` - Enable basic auth with this password.

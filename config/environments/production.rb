@@ -62,7 +62,7 @@ Rails.application.configure do
 
   # Set the host so that we can generate full URLs outside the context of a request
   # (e.g. sending email).
-  config.action_mailer.default_url_options = { host: ENV.fetch("HOSTNAME", "app-prototype.herokuapp.com") }
+  config.action_mailer.default_url_options = { host: ENV.fetch("CANONICAL_HOSTNAME", "app-prototype.herokuapp.com") }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
