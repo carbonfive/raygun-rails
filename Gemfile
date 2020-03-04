@@ -25,6 +25,7 @@ group :production do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "rspec_junit_formatter", require: false
