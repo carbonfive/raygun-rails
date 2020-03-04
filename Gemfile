@@ -13,6 +13,7 @@ gem "rails", "~> 6.0.2"
 gem "simple_form"
 gem "slim-rails"
 gem "webpacker"
+# gem "webpacker-react"
 
 # Env specific dependencies...
 group :production do
