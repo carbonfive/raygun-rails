@@ -9,6 +9,7 @@
 
 # Ingore application config.
 /.env
+/.env.*local
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
