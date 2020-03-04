@@ -42,7 +42,7 @@ Rails.application.configure do
     sock.close
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = { address: "localhost", port: mailcatcher_port }
-  rescue Errno::ECONNREFUSED
+  rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL
     config.action_mailer.delivery_method = :test
   end
   config.action_mailer.raise_delivery_errors = true
