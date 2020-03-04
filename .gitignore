@@ -26,6 +26,7 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ingore testing and debugging.
+/coverage/
 /spec/examples.txt
 .byebug_history
 
