@@ -39,14 +39,13 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "dotenv-rails"
+  gem "guard", require: false
+  gem "guard-rspec", require: false
   gem "launchy"
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
   gem "spring-watcher-listen"
-  # gem "guard"
-  # gem "guard-rspec", ">= 4.6.5" # Resolves to 1.x without a version constraint. :/
-  # gem "guard-livereload"
 end
 
 group :test do

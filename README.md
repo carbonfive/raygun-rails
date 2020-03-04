@@ -83,7 +83,7 @@ Code coverage is reported to Code Climate on every CI build so there's a record 
 
 ### Using Guard
 
-Guard is configured to run ruby specs, and also listen for livereload connections.
+Run `guard` to automatically listen for file changes and run the appropriate specs:
 
     $ bundle exec guard
 
