@@ -4,20 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Heroku uses the ruby version to configure your application"s runtime.
 ruby "2.6.5"
 
-# Back-endy
+gem "awesome_print"
 gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 6.0.2"
-
-# Front-endy
 gem "simple_form"
 gem "slim-rails"
 gem "webpacker"
-
-# Tools
-gem "awesome_print"
 
 # Env specific dependencies...
 group :production do
