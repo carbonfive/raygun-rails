@@ -125,8 +125,12 @@ Acceptance and Production are hosted on Heroku under the _email@example.com_ acc
 
 Several common features and operational parameters can be set using environment variables.
 
-**Required**
+**Required for deployment**
 
+* `DATABASE_URL` - URL of the PostgreSQL database; e.g. `postgres://user:password@host:port/database`
+* `NODE_ENV` - Set to `production` for all deployment environments
+* `RACK_ENV` - Set to `production` for all deployment environments
+* `RAILS_ENV` - Set to `production` for all deployment environments
 * `SECRET_KEY_BASE` - Secret key base for verifying signed cookies. Should be 30+ random characters and secret!
 
 **Optional**
