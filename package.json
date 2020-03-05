@@ -2,6 +2,9 @@
   "name": "app-prototype",
   "private": true,
   "version": "0.2.0",
+  "engines": {
+    "node": ">=10"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.2",
     "@rails/activestorage": "^6.0.2",

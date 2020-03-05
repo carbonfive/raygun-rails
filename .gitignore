@@ -9,6 +9,7 @@
 
 # Ingore application config.
 /.env
+/.env.*local
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,8 +21,12 @@
 !/log/.keep
 !/tmp/.keep
 /.rubocop-*
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
 
 # Ingore testing and debugging.
+/coverage/
 /spec/examples.txt
 .byebug_history
 
@@ -32,13 +37,9 @@
 # Ignore compiled assets and node modules.
 /node_modules
 /public/assets
+/public/packs
+/public/packs-test
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity

@@ -4,20 +4,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Heroku uses the ruby version to configure your application"s runtime.
 ruby "2.6.5"
 
-# Back-endy
+gem "awesome_print"
 gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 6.0.2"
-
-# Front-endy
 gem "simple_form"
 gem "slim-rails"
 gem "webpacker"
-
-# Tools
-gem "awesome_print"
+# gem "webpacker-react"
 
 # Env specific dependencies...
 group :production do
@@ -25,6 +21,7 @@ group :production do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "rspec_junit_formatter", require: false
@@ -38,14 +35,13 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "dotenv-rails"
+  gem "guard", require: false
+  gem "guard-rspec", require: false
   gem "launchy"
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
   gem "spring-watcher-listen"
-  # gem "guard"
-  # gem "guard-rspec", ">= 4.6.5" # Resolves to 1.x without a version constraint. :/
-  # gem "guard-livereload"
 end
 
 group :test do
