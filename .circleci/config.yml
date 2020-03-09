@@ -58,10 +58,6 @@ commands:
       - run:
           name: Set up database
           command: bundle exec rake db:setup
-      # Ensure sample_data runs without issues (note: data is loaded into the development database)
-      - run:
-          name: Seed with sample data
-          command: bundle exec rake db:sample_data
   rspec:
     description: Run RSpec tests
     steps:
@@ -102,14 +98,20 @@ jobs:
       - checkout
       - bundle-install
       - yarn-install
+      - db-setup
       # Rubocop compliance
       - run: bundle exec rubocop
+      # Ensure sample_data runs without issues
+      - run:
+          name: Seed with sample data
+          command: bundle exec rake db:sample_data
   rspec:
     executor: rails
     steps:
       - checkout
       - bundle-install
       - yarn-install
+      - db-setup
       - rspec
 
 workflows:
