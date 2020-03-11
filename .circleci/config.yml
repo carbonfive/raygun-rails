@@ -20,18 +20,17 @@ commands:
     description: Install Ruby gems
     steps:
       - restore_cache:
-          keys: # Include fallbacks to increase the likeliness of a cache hit
-            - gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - gem-cache-{{ arch }}-{{ .Branch }}
-            - gem-cache-{{ arch }}-
+          keys:
+            - bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
+            - bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}
       - run:
-          name: Install gems and remove unused gems
+          name: Install new gems and remove unused gems
           command: |
             gem install bundler
             bundle check || bundle install
             bundle clean --force
       - save_cache:
-          key: gem-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
   yarn-install:
@@ -39,15 +38,14 @@ commands:
     steps:
       - restore_cache:
           name: Restore Yarn cache
-          keys: # Include fallbacks to increase the likeliness of a cache hit
-            - yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-cache-{{ arch }}-{{ .Branch }}
-            - yarn-cache-{{ arch }}-
+          keys:
+            - yarn-cache-v0-{{ arch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-v0-{{ arch }}
       - run:
-          name: Install JS dependencies
+          name: Yarn install
           command: yarn install --cache-folder .yarn-cache
       - save_cache:
-          key: yarn-cache-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          key: yarn-cache-v0-{{ arch }}-{{ checksum "yarn.lock" }}
           paths:
             - .yarn-cache
   db-setup:
