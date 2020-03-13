@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=10"
   },
+  "scripts": {
+    "start": "heroku local -f Procfile.dev"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.2",
     "@rails/activestorage": "^6.0.2",
