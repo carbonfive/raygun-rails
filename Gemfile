@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Heroku uses the ruby version to configure your application"s runtime.
 ruby "2.6.6"
 
-gem "awesome_print"
+gem "amazing_print"
 gem "bootsnap", require: false
 gem "pg"
 gem "puma"
