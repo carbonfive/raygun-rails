@@ -11,7 +11,7 @@
   "dependencies": {
     "@rails/actioncable": "^6.0.2",
     "@rails/activestorage": "^6.0.3",
-    "@rails/ujs": "^6.0.2",
+    "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.1.1",
     "core-js": "^3.6.5",
     "regenerator-runtime": "^0.13.5"
