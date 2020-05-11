@@ -9,7 +9,7 @@
     "start": "heroku local -f Procfile.dev"
   },
   "dependencies": {
-    "@rails/actioncable": "^6.0.2",
+    "@rails/actioncable": "^6.0.3",
     "@rails/activestorage": "^6.0.3",
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.1.1",
