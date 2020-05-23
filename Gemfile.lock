@@ -146,7 +146,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.19.1)
-    parser (2.7.1.1)
+    parser (2.7.1.2)
       ast (~> 2.4.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -228,7 +228,7 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-performance (1.5.2)
+    rubocop-performance (1.6.0)
       rubocop (>= 0.71.0)
     rubocop-rails (2.5.2)
       activesupport
