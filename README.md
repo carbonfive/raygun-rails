@@ -60,12 +60,12 @@ If you stop the dev server, Rails automatically reverts back to on-demand compil
 ### Git
 
 * Branch `development` is auto-deployed to acceptance.
-* Branch `master` is auto-deployed to production.
+* Branch `main` is auto-deployed to production.
 * Create feature branches off of `development` using the naming convention
   `(features|chores|bugs)/a-brief-description-######`, where ###### is the tracker id.
 * Rebase your feature branch before merging into `development` to produce clean/compact merge bubbles.
 * Always retain merge commits when merging into `development` (e.g. `git merge --no-ff branchname`).
-* Use `git merge development` (fast-forward, no merge commit) from `master`.
+* Use `git merge development` (fast-forward, no merge commit) from `main`.
 * Craft atomic commits that make sense on their own and can be easily cherry-picked or reverted if necessary.
 
 ### Code Style
