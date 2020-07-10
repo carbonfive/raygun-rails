@@ -1,6 +1,6 @@
 # This file is used by Rack-based servers to start the application.
 
-require ::File.expand_path("../config/environment", __FILE__)
+require ::File.expand_path("config/environment", __dir__)
 
 # Redirect to the custom (canonical) hostname.
 use Rack::CanonicalHost, ENV["CANONICAL_HOSTNAME"] if ENV["CANONICAL_HOSTNAME"].present?
