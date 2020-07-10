@@ -23,8 +23,8 @@ end
 group :development, :test do
   gem "byebug"
   gem "factory_bot_rails"
-  gem "rspec-rails"
   gem "rspec_junit_formatter", require: false
+  gem "rspec-rails"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
