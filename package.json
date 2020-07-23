@@ -14,7 +14,7 @@
     "@rails/ujs": "^6.0.3",
     "@rails/webpacker": "^5.1.1",
     "core-js": "^3.6.5",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
