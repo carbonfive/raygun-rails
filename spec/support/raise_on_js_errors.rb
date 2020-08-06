@@ -14,7 +14,7 @@ RSpec.configure do |config|
     if js_errors.present?
       exception_headline = "This test caused JS errors."
       exception_details = js_errors.map(&:message).map { |line| line.indent(2, " ") }.join("\n")
-      raise JavaScriptError, exception_headline + "\n" + exception_details
+      raise JavaScriptError, [exception_headline, exception_details].join("\n")
     end
   end
 end
