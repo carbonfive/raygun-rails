@@ -1,4 +1,8 @@
 version: 2.1
+orbs:
+  node: circleci/node@4.0.0
+  ruby: circleci/ruby@1.1.1
+
 executors:
   rails:
     docker:
@@ -16,38 +20,12 @@ executors:
           POSTGRES_PASSWORD: ""
 
 commands:
-  bundle-install:
-    description: Install Ruby gems
+  install-dependencies:
+    description: Install ruby and JS dependencies
     steps:
-      - restore_cache:
-          keys:
-            - bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
-            - bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}
-      - run:
-          name: Install new gems and remove unused gems
-          command: |
-            gem install bundler
-            bundle check || bundle install
-            bundle clean --force
-      - save_cache:
-          key: bundler-cache-v0-{{ arch }}-{{ checksum ".ruby-version" }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-  yarn-install:
-    description: Install JavaScript dependencies
-    steps:
-      - restore_cache:
-          name: Restore Yarn cache
-          keys:
-            - yarn-cache-v0-{{ arch }}-{{ checksum "yarn.lock" }}
-            - yarn-cache-v0-{{ arch }}
-      - run:
-          name: Yarn install
-          command: yarn install --cache-folder .yarn-cache
-      - save_cache:
-          key: yarn-cache-v0-{{ arch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - .yarn-cache
+      - ruby/install-deps
+      - node/install-packages:
+          pkg-manager: yarn
   db-setup:
     description: Set up database
     steps:
@@ -56,61 +34,34 @@ commands:
       - run:
           name: Set up database
           command: bundle exec rake db:setup
-  rspec:
-    description: Run RSpec tests
-    steps:
-      - run:
-          name: Run RSpec tests in parallel
-          command: |
-            circleci tests glob "spec/**/*_spec.rb" > /tmp/rspec_files
-
-            TEST_FILES=$(circleci tests split --split-by=timings --timings-type=filename < /tmp/rspec_files)
-
-            echo -e "Testing" $(echo $TEST_FILES | wc -w) "of" $(cat /tmp/rspec_files | wc -w) "files on this container.\n"
-
-            bundle exec rspec --format progress \
-                              --format RspecJunitFormatter \
-                              --out ./test-results/rspec/results.xml -- \
-                              $TEST_FILES
-      # Save test results, so the the timings can be used in future parallel runs
-      - store_test_results:
-          path: ./test-results
-      # Save the test logs for debugging
-      - store_artifacts:
-          path: ./log/test.log
-          destination: test.log
-      # Save screenshots for debugging
-      - store_artifacts:
-          path: ./tmp/screenshots
 
 jobs:
   install_dependencies:
     executor: rails
     steps:
       - checkout
-      - bundle-install
-      - yarn-install
+      - install-dependencies
   static_analysis:
     executor: rails
     steps:
       - checkout
-      - bundle-install
-      - yarn-install
+      - install-dependencies
       - db-setup
-      # Rubocop compliance
-      - run: bundle exec rubocop
-      # Ensure sample_data runs without issues
+      - ruby/rubocop-check
       - run:
+          # Ensure sample_data runs without issues
           name: Seed with sample data
           command: bundle exec rake db:sample_data
   rspec:
     executor: rails
     steps:
       - checkout
-      - bundle-install
-      - yarn-install
+      - install-dependencies
       - db-setup
-      - rspec
+      - ruby/rspec-test
+      - store_artifacts:
+          # Save screenshots for debugging
+          path: ./tmp/screenshots
 
 workflows:
   version: 2
