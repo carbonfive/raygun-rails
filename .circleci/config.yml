@@ -51,13 +51,16 @@ jobs:
       - run:
           # Ensure sample_data runs without issues
           name: Seed with sample data
-          command: bundle exec rake db:sample_data
+          command: bin/rails db:sample_data
   rspec:
     executor: rails
     steps:
       - checkout
       - install-dependencies
       - db-setup
+      - run:
+          name: Precompile assets
+          command: bin/rails assets:precompile
       - ruby/rspec-test
       - store_artifacts:
           # Save screenshots for debugging
