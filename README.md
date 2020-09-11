@@ -14,7 +14,7 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 
 * Ruby 2.7 (see [.ruby-version](.ruby-version)).
 * Node.js 14.10.1 (see [.node-version](.node-version)).
-* External Dependendencies (`brew bundle --no-lock`, see [Brewfile](Brewfile)).
+* External Dependencies (`brew bundle --no-lock`, see [Brewfile](Brewfile)).
 
 ### First Time Setup
 
