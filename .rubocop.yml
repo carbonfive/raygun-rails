@@ -1,9 +1,10 @@
 inherit_from:
-  - https://raw.githubusercontent.com/carbonfive/c5-conventions/master/rubocop/rubocop.yml
+  - https://raw.githubusercontent.com/carbonfive/c5-conventions/main/rubocop/.rubocop-common.yml
+  - https://raw.githubusercontent.com/carbonfive/c5-conventions/main/rubocop/.rubocop-performance.yml
+  - https://raw.githubusercontent.com/carbonfive/c5-conventions/main/rubocop/.rubocop-rails.yml
+  - https://raw.githubusercontent.com/carbonfive/c5-conventions/main/rubocop/.rubocop-rspec.yml
 
 require:
   - rubocop-performance
   - rubocop-rails
-
-Rails:
-  Enabled: true
+  - rubocop-rspec
