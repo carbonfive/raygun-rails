@@ -6,7 +6,7 @@
     "node": ">=12"
   },
   "scripts": {
-    "start": "heroku local -f Procfile.dev"
+    "start": "nf start -j Procfile.dev"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.3",
@@ -17,6 +17,7 @@
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
+    "foreman": "^3.0.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
