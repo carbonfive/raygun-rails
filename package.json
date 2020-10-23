@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.2.0",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "start": "heroku local -f Procfile.dev"

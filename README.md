@@ -13,8 +13,12 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 2.7 (see [.ruby-version](.ruby-version)).
-* PostgreSQL 11.2+ (`brew install postgresql`).
+* Node 12 (see [.node-version](.node-version)).
+* Yarn 1.x (`npm install -g yarn`).
 * Heroku CLI (`brew install heroku`).
+* PostgreSQL 11.2+. (`brew install postgresql`).
+
+It is strongly recommended that you use a version manager like [rbenv](https://github.com/rbenv/rbenv) (for Ruby), [nvm](https://github.com/nvm-sh/nvm) or [nodenv](https://github.com/nodenv/nodenv) (for Node), or [asdf](https://asdf-vm.com/) (for both) to ensure the correct Ruby and Node versions.
 
 ### First Time Setup
 
