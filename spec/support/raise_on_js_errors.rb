@@ -5,7 +5,7 @@ JavaScriptError = Class.new(StandardError)
 # back-end servers often use them to indicate statuses such as form validation
 # errors, which may well be the intended effect of a test.
 RSpec.configure do |config|
-  config.after(type: :feature, js: true) do
+  config.after(type: :system, js: true) do
     js_console_output = page.driver.browser.manage.logs.get(:browser)
     http_4xx_error_detector = /the server responded with a status of 4/
     js_errors = js_console_output.select do |log_item|
