@@ -13,11 +13,11 @@ executors:
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
-      - image: circleci/postgres:11.2-alpine
+      - image: circleci/postgres:13.1-ram
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: app_prototype_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: "password" # Must be non-empty.
 
 commands:
   install-dependencies:
