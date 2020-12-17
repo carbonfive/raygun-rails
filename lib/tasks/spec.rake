@@ -11,6 +11,7 @@ begin
 rescue LoadError
   namespace :spec do
     task :without_system do
+      # Intentionally left blank.
     end
   end
 end

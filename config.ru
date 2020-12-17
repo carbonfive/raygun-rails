@@ -1,6 +1,6 @@
 # This file is used by Rack-based servers to start the application.
 
-require ::File.expand_path("config/environment", __dir__)
+require_relative "config/environment"
 
 # Redirect to the custom (canonical) hostname.
 use Rack::CanonicalHost, ENV["CANONICAL_HOSTNAME"] if ENV["CANONICAL_HOSTNAME"].present?
@@ -16,3 +16,4 @@ if BASIC_AUTH_PASSWORD
 end
 
 run Rails.application
+Rails.application.load_server
