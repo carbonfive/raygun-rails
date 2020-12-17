@@ -33,20 +33,8 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # An opinionated ActionMailer config for development:
-  #   - If mailcatcher is running when the app boots, use it.
-  #   - If not, use Rails' built-in :test delivery-method.
-  #   - In either case, always raise delivery errors.
-  #   - Other configuration here follows standard Rails conventions.
-  begin
-    mailcatcher_port = 1025
-    sock = TCPSocket.new("localhost", mailcatcher_port)
-    sock.close
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = { address: "localhost", port: mailcatcher_port }
-  rescue Errno::ECONNREFUSED, Errno::EADDRNOTAVAIL
-    config.action_mailer.delivery_method = :test
-  end
+  # Don't care if the mailer can't send.
+  config.action_mailer.delivery_method = :test
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: "localhost:3000" }
