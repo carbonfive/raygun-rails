@@ -33,7 +33,7 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
+  # Default to the :test mailer and raise errors.
   config.action_mailer.delivery_method = :test
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
