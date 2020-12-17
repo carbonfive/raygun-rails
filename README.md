@@ -95,14 +95,6 @@ Run `guard` to automatically listen for file changes and run the appropriate spe
 
     $ bundle exec guard
 
-### Using Mailcatcher
-
-    $ gem install mailcatcher
-    $ mailcatcher
-    $ open http://localhost:1080/
-
-Learn more at [mailcatcher.me](http://mailcatcher.me/). And please don't add mailcatcher to the Gemfile.
-
 ### Using ChromeDriver
 
 The ChromeDriver version used in this project is maintained by the [webdrivers](https://github.com/titusfortner/webdrivers) gem.  This is means that the
