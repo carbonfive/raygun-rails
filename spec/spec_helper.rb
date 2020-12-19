@@ -119,6 +119,6 @@ RSpec.configure do |config|
   # Run non-system specs before system specs. `--seed` still applies to ordering both sets.
   config.register_ordering(:global) do |items|
     systems, others = items.partition { |g| g.metadata[:type] == :system }
-    others.shuffle + systems.shuffle
+    others + systems
   end
 end
