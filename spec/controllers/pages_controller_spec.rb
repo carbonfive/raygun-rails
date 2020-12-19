@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe PagesController do
+RSpec.describe PagesController do
   describe "GET 'root'" do
     it "returns http success" do
       get "root"

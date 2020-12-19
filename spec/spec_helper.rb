@@ -28,9 +28,6 @@ end
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
-# The `.rspec` file also contains a few flags that are not defaults but that
-# users commonly want.
-#
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -56,10 +53,15 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # The settings below are suggested to provide a good initial experience
-  # with RSpec, but feel free to customize to your heart's content.
+  # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
+  # have no way to turn it off -- the option exists only for backwards
+  # compatibility in RSpec 3). It causes shared context metadata to be
+  # inherited by the metadata hash of host groups and examples, rather than
+  # triggering implicit auto-inclusion in groups with matching metadata.
+  config.shared_context_metadata_behavior = :apply_to_host_groups
 
-  # Enable aggregate failures unless it's a system spec or explicitly configured at the spec level.
+  # Enable aggregate failures unless it's a system spec or explicitly
+  # configured at the spec level.
   config.define_derived_metadata(type: proc { |type| type != :system }) do |meta|
     meta[:aggregate_failures] = true
   end
@@ -68,12 +70,12 @@ RSpec.configure do |config|
     meta[:aggregate_failures] = false unless meta.key?(:aggregate_failures)
   end
 
-  # These two settings work together to allow you to limit a spec run
-  # to individual examples or groups you care about by tagging them with
-  # `:focus` metadata. When nothing is tagged with `:focus`, all examples
-  # get run.
-  config.filter_run :focus
-  config.run_all_when_everything_filtered = true
+  # This allows you to limit a spec run to individual examples or groups
+  # you care about by tagging them with `:focus` metadata. When nothing
+  # is tagged with `:focus`, all examples get run. RSpec also provides
+  # aliases for `it`, `describe`, and `context` that include `:focus`
+  # metadata: `fit`, `fdescribe` and `fcontext`, respectively.
+  config.filter_run_when_matching :focus
 
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options. We recommend
@@ -85,11 +87,7 @@ RSpec.configure do |config|
   #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
   #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
-  # config.disable_monkey_patching!
-
-  # This setting enables warnings. It's recommended, but in some cases may
-  # be too noisy due to issues in dependencies.
-  # config.warnings = true
+  config.disable_monkey_patching!
 
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
@@ -106,12 +104,6 @@ RSpec.configure do |config|
   # particularly slow.
   # config.profile_examples = 10
 
-  # Run non-feature specs (shuffled) before feature specs.
-  # config.register_ordering(:global) do |items|
-  #   features, others = items.partition { |g| g.metadata[:type] == :feature }
-  #   others.shuffle + features.
-  # end
-
   # Run specs in random order to surface order dependencies. If you find an
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
@@ -123,4 +115,10 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+  # Run non-system specs before system specs. `--seed` still applies to ordering both sets.
+  config.register_ordering(:global) do |items|
+    systems, others = items.partition { |g| g.metadata[:type] == :system }
+    others + systems
+  end
 end
