@@ -43,3 +43,7 @@ yarn-debug.log*
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore editor metadata.
+.idea/
+.DS_Store
+*~
