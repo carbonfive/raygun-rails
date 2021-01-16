@@ -65,4 +65,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Enable time helpers like `travel_to` and `freeze_time` to be used within specs
+  # https://api.rubyonrails.org/classes/ActiveSupport/Testing/TimeHelpers.html
+  config.include ActiveSupport::Testing::TimeHelpers
 end
