@@ -147,7 +147,7 @@ Several common features and operational parameters can be set using environment 
 * `RAILS_MAX_THREADS` - Threads per worker (default: 5).
 * `RAILS_MIN_THREADS` - Threads per worker (default: 5).
 * `RAILS_SERVE_STATIC_FILES` - Serve static assets, good for Heroku (default: false).
-* `WEB_CONCURRENCY` - Number of puma workers to spawn (default: 1).
+* `WEB_CONCURRENCY` - Number of puma workers to spawn (default: 1; consider 2 for medium Heroku dynos, or 8 for large).
 
 ### Third Party Services
 
