@@ -42,7 +42,6 @@ group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "spring-watcher-listen"
 end
 
 group :test do
