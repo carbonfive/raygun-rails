@@ -1,3 +1,0 @@
-web:     bin/rails server -b 0.0.0.0
-webpack: bin/webpack-dev-server
-#worker:  bundle exec rake jobs:work

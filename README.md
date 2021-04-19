@@ -48,7 +48,8 @@ Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec`
 
 ### Running the Application Locally
 
-The easiest way to run the app is using `yarn start`. This starts all the processes defined in `Procfile.dev`, including the Rails server and the webpack dev server.
+The easiest way to run the app is using `yarn start`. This starts all the processes needed for development, including the Rails server and the webpack dev server. See `package.json` for details.
+
 
     $ yarn start
 
