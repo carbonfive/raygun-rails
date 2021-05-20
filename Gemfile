@@ -36,8 +36,6 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "dotenv-rails"
-  gem "guard", require: false
-  gem "guard-rspec", require: false
   gem "launchy"
   gem "listen"
   gem "spring"
