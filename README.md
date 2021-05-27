@@ -90,11 +90,12 @@ Coverage for the ruby specs:
 
 Code coverage is reported to Code Climate on every CI build so there's a record of trending.
 
-### Using Guard
+### Using retest
 
-Run `guard` to automatically listen for file changes and run the appropriate specs:
+Install and run `retest` to automatically listen for file changes and run the appropriate specs:
 
-    $ bundle exec guard
+    $ gem install retest
+    $ retest
 
 ### Using ChromeDriver
 
