@@ -16,5 +16,5 @@ updates:
       day: thursday
       time: "12:30"
       timezone: America/Los_Angeles
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     versioning-strategy: increase-if-necessary
