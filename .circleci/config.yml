@@ -6,7 +6,7 @@ orbs:
 executors:
   rails:
     docker:
-      - image: circleci/ruby:3.0.1-node-browsers
+      - image: circleci/ruby:3.0.2-node-browsers
         environment:
           BUNDLE_JOBS: 4
           BUNDLE_PATH: vendor/bundle
