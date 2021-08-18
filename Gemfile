@@ -38,8 +38,6 @@ group :development do
   gem "dotenv-rails"
   gem "launchy"
   gem "listen"
-  gem "spring"
-  gem "spring-commands-rspec"
 end
 
 group :test do
