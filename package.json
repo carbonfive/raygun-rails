@@ -17,7 +17,7 @@
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
-    "concurrently": "^6.2.0",
+    "concurrently": "^6.2.1",
     "webpack-dev-server": "^3.11.1"
   },
   "resolutions": {
