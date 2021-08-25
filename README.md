@@ -42,9 +42,8 @@ To run all Ruby and Javascript specs.
 
     $ ./bin/rake
 
-Note: `./bin/rake` runs the springified version of rake (there's a `./bin/rspec` and `./bin/rails` too). You can add
-`./bin` to your PATH too, then you'll always use the springified bins when they exist. See
-[rails/spring](https://github.com/rails/spring) for additional information.
+Note: `./bin/rake` runs the bundled version of rake (there's a `./bin/rspec` and `./bin/rails` too). You can add
+`./bin` to your PATH too, then you'll always use the correct version of these scripts as enforced by the `Gemfile.lock`.
 
 ### Running the Application Locally
 
