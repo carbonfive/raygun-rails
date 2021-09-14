@@ -1,5 +1,6 @@
 version: 2.1
 orbs:
+  browser-tools: circleci/browser-tools@1.2.2
   node: circleci/node@4.0.0
   ruby: circleci/ruby@1.1.1
 
@@ -56,6 +57,8 @@ jobs:
     executor: rails
     steps:
       - checkout
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - install-dependencies
       - db-setup
       - run:
