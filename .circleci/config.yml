@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.2.2
-  node: circleci/node@4.0.0
-  ruby: circleci/ruby@1.1.1
+  node: circleci/node@4.7.0
+  ruby: circleci/ruby@1.1.4
 
 executors:
   rails:
