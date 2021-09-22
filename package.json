@@ -12,7 +12,7 @@
     "@rails/actioncable": "^6.1",
     "@rails/activestorage": "^6.1",
     "@rails/ujs": "^6.1",
-    "@rails/webpacker": "^5.2.1",
+    "@rails/webpacker": "^5.4.3",
     "core-js": "^3.17.2",
     "regenerator-runtime": "^0.13.9"
   },
