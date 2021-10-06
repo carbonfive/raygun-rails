@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^4.2.1"
   },
   "resolutions": {
     "node-forge": "^0.10.0"
