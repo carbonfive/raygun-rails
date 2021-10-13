@@ -1,21 +1,25 @@
-# Problem
+Problem
+=======
 
 problem statement, including
 [link to Pivotal Tracker #12345678](https://www.pivotaltracker.com/story/show/12345678)
 
-# Solution
+Solution
+========
 
 What I/we did to solve this problem
 
 with @pairperson1
 
-## Change summary
+Change summary
+--------------
 
-- Tidy, well formulated commit message
-- Another great commit message
-- Something else I/we did
+* Tidy, well formulated commit message
+* Another great commit message
+* Something else I/we did
 
-## Steps to Verify
+Steps to Verify
+---------------
 
 1. A setup step / beginning state
 1. What to do next
@@ -25,18 +29,21 @@ with @pairperson1
 
 <!-- delete the following section if this PR adds no new dependencies -->
 
-## New Dependencies
+New Dependencies
+----------------
 
 Consider adding links to relevant listings from https://snyk.io or https://www.ruby-toolbox.com
 
 <!-- delete the following sections if this PR has no UI changes -->
 
-## Accessibility Checks
+Accessibility Checks
+--------------------
 
 - [ ] Text remains visible and feature is still functional even when browser is zoomed 200%
 - [ ] Feature is functional using purely keyboard-based interactions
 - [ ] Passes a Lighthouse audit (choose Lighthouse tab in Google Chrome devtools and run reports with **accessibility** selected, for both desktop and mobile)
 
-## Screenshots
+Screenshots
+-----------
 
 Show-n-tell images/animations here
