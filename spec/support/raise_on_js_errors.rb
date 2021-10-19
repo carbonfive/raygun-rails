@@ -6,7 +6,7 @@ JavaScriptError = Class.new(StandardError)
 # errors, which may well be the intended effect of a test.
 RSpec.configure do |config|
   config.after(type: :system, js: true) do
-    js_console_output = page.driver.browser.manage.logs.get(:browser)
+    js_console_output = page.driver.browser.logs.get(:browser)
     http_4xx_error_detector = /the server responded with a status of 4/
     js_errors = js_console_output.select do |log_item|
       log_item.level == "SEVERE" && log_item.message !~ http_4xx_error_detector
