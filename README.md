@@ -13,7 +13,7 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 To run the specs or fire up the server, be sure you have these installed (and running):
 
 * Ruby 3.0 (see [.ruby-version](.ruby-version)).
-* Node 12 (see [.node-version](.node-version)).
+* Node 16 (see [.node-version](.node-version)).
 * Yarn 1.x (`npm install -g yarn`).
 * PostgreSQL 13.1+. (`brew install postgresql`).
 
