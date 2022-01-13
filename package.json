@@ -9,7 +9,7 @@
     "start": "concurrently --raw --kill-others-on-fail 'bin/rails s -b 0.0.0.0' 'bin/webpack-dev-server'"
   },
   "dependencies": {
-    "@rails/actioncable": "^6.1",
+    "@rails/actioncable": "^7.0.1",
     "@rails/activestorage": "^6.1",
     "@rails/ujs": "^6.1",
     "@rails/webpacker": "^5.4.3",
