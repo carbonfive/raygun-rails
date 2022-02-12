@@ -9,7 +9,7 @@ gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 6.1"
+gem "rails", "~> 7.0"
 gem "simple_form"
 gem "slim-rails"
 gem "webpacker"
