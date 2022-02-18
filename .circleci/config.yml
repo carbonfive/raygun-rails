@@ -32,13 +32,13 @@ commands:
       - node/install-packages:
           pkg-manager: yarn
   db-setup:
-    description: Set up database
+    description: Create database
     steps:
       # Using structure.sql? Install postgresql-client for loading structure.
       #- run: sudo apt-get install postgresql-client
       - run:
-          name: Set up database
-          command: bundle exec rake db:setup
+          name: Create database
+          command: bundle exec rake db:create
 
 jobs:
   install_dependencies:
@@ -54,8 +54,16 @@ jobs:
       - db-setup
       - ruby/rubocop-check
       - run:
-          # Ensure sample_data runs without issues
-          name: Seed with sample data
+          # Ensure db:migrate runs without issues
+          name: Migrate database
+          command: bin/rails db:migrate
+      - run:
+          # Ensure db:seed runs without issues
+          name: Load seeds
+          command: bin/rails db:seed
+      - run:
+          # Ensure db:sample_data runs without issues
+          name: Load sample data
           command: bin/rails db:sample_data
   rspec:
     executor: rails
