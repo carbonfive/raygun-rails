@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.2.2
-  node: circleci/node@4.7.0
-  ruby: circleci/ruby@1.1.4
+  browser-tools: circleci/browser-tools@1.2.5
+  node: circleci/node@5.0.2
+  ruby: circleci/ruby@1.6.0
 
 executors:
   rails:
@@ -14,20 +14,18 @@ executors:
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
-      - image: circleci/postgres:13.1-ram
+      - image: cimg/postgres:14.2
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: app_prototype_test
           POSTGRES_PASSWORD: "password" # Must be non-empty.
 
 commands:
-  install-dependencies:
-    description: Install ruby and JS dependencies
+  install-node-deps:
+    description: Install Yarn and Node dependencies
     steps:
-      - ruby/install-deps
       - node/install:
           install-yarn: true
-          install-npm: false
           node-version: "16.14.2"
       - node/install-packages:
           pkg-manager: yarn
@@ -38,32 +36,38 @@ commands:
       #- run: sudo apt-get install postgresql-client
       - run:
           name: Set up database
-          command: bundle exec rake db:setup
+          command: bundle exec rake db:create db:schema:load
 
 jobs:
-  install_dependencies:
+  load_data:
     executor: rails
     steps:
       - checkout
-      - install-dependencies
-  static_analysis:
-    executor: rails
-    steps:
-      - checkout
-      - install-dependencies
+      - ruby/install-deps
       - db-setup
-      - ruby/rubocop-check
+      - run:
+          # Ensure seeds run without issues
+          name: Load seeds
+          command: bin/rails db:seed
       - run:
           # Ensure sample_data runs without issues
-          name: Seed with sample data
+          name: Load sample data
           command: bin/rails db:sample_data
+  rubocop:
+    executor: rails
+    steps:
+      - checkout
+      - ruby/install-deps
+      - ruby/rubocop-check
   rspec:
     executor: rails
+    parallelism: 4
     steps:
       - checkout
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - install-dependencies
+      - ruby/install-deps
+      - install-node-deps
       - db-setup
       - run:
           name: Precompile assets
@@ -77,10 +81,6 @@ workflows:
   version: 2
   build:
     jobs:
-      - install_dependencies
-      - static_analysis:
-          requires:
-            - install_dependencies
-      - rspec:
-          requires:
-            - install_dependencies
+      - load_data
+      - rubocop
+      - rspec
