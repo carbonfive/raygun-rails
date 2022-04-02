@@ -61,7 +61,8 @@ jobs:
       - ruby/rubocop-check
   rspec:
     executor: rails
-    parallelism: 4
+    # Divide up specs and run them in parallel across multiple containers to mitigate slow tests
+    # parallelism: 4
     steps:
       - checkout
       - browser-tools/install-chrome
