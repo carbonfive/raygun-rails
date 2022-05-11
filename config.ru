@@ -3,7 +3,7 @@
 require_relative "config/environment"
 
 # Redirect to the custom (canonical) hostname.
-use Rack::CanonicalHost, ENV["CANONICAL_HOSTNAME"] if ENV["CANONICAL_HOSTNAME"].present?
+use Rack::CanonicalHost, ENV.fetch("CANONICAL_HOSTNAME", nil) if ENV["CANONICAL_HOSTNAME"].present?
 
 # Optional Basic Auth - Enabled if BASIC_AUTH_PASSWORD is set. User is optional (any value will be accepted).
 BASIC_AUTH_USER     = ENV["BASIC_AUTH_USER"].presence
