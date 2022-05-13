@@ -37,7 +37,6 @@ group :development do
   gem "binding_of_caller"
   gem "dotenv-rails"
   gem "launchy"
-  gem "listen"
 end
 
 group :test do
