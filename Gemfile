@@ -2,14 +2,14 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Heroku uses the ruby version to configure your application"s runtime.
-ruby "3.0.4"
+ruby "3.1.2"
 
 gem "amazing_print"
 gem "bootsnap", require: false
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
-gem "rails", "~> 6.1"
+gem "rails", "~> 7.0.3"
 gem "simple_form"
 gem "slim-rails"
 gem "webpacker"
@@ -37,7 +37,6 @@ group :development do
   gem "binding_of_caller"
   gem "dotenv-rails"
   gem "launchy"
-  gem "listen"
 end
 
 group :test do
