@@ -12,6 +12,6 @@ RSpec.describe "Static Pages" do
   it "/ should include a button with the CTA message 'And away we go!'", js: true do
     visit root_path
 
-    expect(page).to have_css("button", text: "And away we go!")
+    expect(page).to have_button("And away we go!")
   end
 end
