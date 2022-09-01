@@ -29,7 +29,7 @@ Capybara.register_driver :headless_chrome do |app|
   )
 end
 
-chrome_driver = ENV["HEADLESS"] == "false" ? :chrome : :headless_chrome
+chrome_driver = (ENV["HEADLESS"] == "false") ? :chrome : :headless_chrome
 
 Capybara.default_driver    = :rack_test
 Capybara.javascript_driver = chrome_driver
