@@ -15,7 +15,7 @@ To run the specs or fire up the server, be sure you have these installed (and ru
 * Ruby 3.0 (see [.ruby-version](.ruby-version)).
 * Node 16 (see [.node-version](.node-version)).
 * Yarn 1.x (`npm install -g yarn`).
-* PostgreSQL 13.1+. (`brew install postgresql`).
+* PostgreSQL 14+. (`brew install postgresql@14`).
 
 To manage deployments you will need:
 
