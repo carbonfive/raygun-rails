@@ -20,9 +20,17 @@ Rails.application.configure do
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
-  # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  if ENV["RAILS_SERVE_STATIC_FILES"].present?
+    config.public_file_server.enabled = true
+
+    # Enable gzip for dynamically generated HTML and API responses.
+    # Remove if NGNIX, Cloudflare, or similar reverse-proxy is in place that already provides gzip.
+    config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
+  else
+    # Disable serving static files from the `/public` folder by default since
+    # Apache or NGINX already handles this.
+    config.public_file_server.enabled = false
+  end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = ENV["ASSET_HOST"].presence
