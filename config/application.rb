@@ -32,10 +32,6 @@ module AppPrototype
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Enable gzip for dynamically generated HTML and API responses.
-    # Remove if NGNIX, Cloudflare, or similar reverse-proxy is in place that already provides gzip.
-    config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
-
     # Enable/disable generators.
     config.generators do |g|
       # Core Rails
