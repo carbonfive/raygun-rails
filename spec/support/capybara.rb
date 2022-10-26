@@ -39,7 +39,7 @@ RSpec.configure do |config|
     driven_by(:rack_test)
   end
 
-  config.before(:each, type: :system, js: true) do
+  config.before(:each, js: true, type: :system) do
     driven_by(chrome_driver)
   end
 end
