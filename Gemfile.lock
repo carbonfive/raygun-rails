@@ -300,7 +300,7 @@ DEPENDENCIES
   factory_bot_rails
   launchy
   pg
-  puma
+  puma (~> 5.6)
   rack-canonical-host
   rack-timeout
   rails (~> 7.0.3)
