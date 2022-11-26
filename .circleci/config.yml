@@ -7,7 +7,7 @@ orbs:
 executors:
   rails:
     docker:
-      - image: cimg/ruby:3.1.2-browsers
+      - image: cimg/ruby:3.1.3-browsers
         environment:
           BUNDLE_JOBS: 4
           BUNDLE_PATH: vendor/bundle
