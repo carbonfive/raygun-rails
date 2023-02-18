@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.2.0",
   "engines": {
-    "node": "^16.18.1"
+    "node": "^16.19.1"
   },
   "scripts": {
     "start": "concurrently --raw --kill-others-on-fail 'bin/rails s -b 0.0.0.0' 'bin/webpack-dev-server'"
