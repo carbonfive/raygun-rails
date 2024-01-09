@@ -7,7 +7,7 @@ ruby "3.1.3"
 gem "amazing_print"
 gem "bootsnap", require: false
 gem "pg"
-gem "puma", "~> 5.6" # Rails doesn't yet support puma 6 as of rails 7.0
+gem "puma", "~> 6.4" # Rails doesn't yet support puma 6 as of rails 7.0
 gem "rack-canonical-host"
 gem "rails", "~> 7.0.3"
 gem "simple_form"
