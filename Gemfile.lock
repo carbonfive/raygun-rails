@@ -145,7 +145,7 @@ GEM
       ast (~> 2.4.1)
     pg (1.4.5)
     public_suffix (5.0.0)
-    puma (5.6.5)
+    puma (7.2.2)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
@@ -292,7 +292,7 @@ DEPENDENCIES
   factory_bot_rails
   launchy
   pg
-  puma (~> 5.6)
+  puma (~> 7.2)
   rack-canonical-host
   rack-timeout
   rails (~> 7.0.3)
